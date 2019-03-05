@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的推荐</title>
+    <link rel="stylesheet" href="./css/tuijian.css">
+</head>
+
+<body>
+    <header>
+        <p>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            我的推荐
+            <span class="filter" onclick="showSelect()"></span>
+        </p>
+        <div class="header-center">
+            <div class="header-item" onclick="javascript:window.location.href='tuijianLog.html'">
+                <dt>直接推荐</dt>
+                <dd>100人</dd>
+            </div>
+            <div class="header-item left-border">
+                <dt>间接推荐</dt>
+                <dd>100人</dd>
+            </div>
+        </div>
+        <div class="select">
+            <div class="rows">
+                <p>全部</p>
+            </div>
+            <div class="rows">
+                <p>普通会员</p>
+                <input type="checkbox" name="status" class="status">
+                <img src="./images/checkbox.png" alt="">
+            </div>
+            <div class="rows">
+                <input type="checkbox" name="status" class="status">
+                <p>高级会员</p>
+                <img src="./images/checkbox.png" alt="">
+            </div>
+            <div class="rows">
+                <p>代言人</p>
+                <input type="checkbox" name="status" class="status">
+                <img src="./images/checkbox.png" alt="">
+            </div>
+        </div>
+    </header>
+    <div class="row">
+        <div class="head">
+            <img class="user" src="./images/user_head.png" alt="">
+            <img class="user-status" src="./images/member_gray.png" alt="">
+        </div>
+        <p>
+            139****1684
+            &nbsp;
+            &nbsp;
+            代言人
+        </p>
+    </div>
+    <div class="row">
+        <div class="head">
+            <img class="user" src="./images/user_head.png" alt="">
+            <img class="user-status" src="./images/member_green.png" alt="">
+        </div>
+        <p>
+            139****1684
+            &nbsp;
+            &nbsp;
+            代言人
+        </p>
+    </div>
+
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        $(function () {
+            $('header .select .rows').click(function () {
+                var index = $('header .select .rows').index(this);
+                if (index == 0) {
+                    $('header .select .rows input').attr('checked', true);
+                    $('header .select .rows img').attr('src', './images/checkbox_check.png');
+                } else {
+                    if ($('header .select .rows').eq(index).find('input').attr('checked')) {
+                        $('header .select .rows').eq(index).find('input').attr('checked', false);
+                        $('header .select .rows').eq(index).find('img').attr('src', './images/checkbox.png');
+                    } else {
+                        $('header .select .rows').eq(index).find('input').attr('checked', true);
+                        $('header .select .rows').eq(index).find('img').attr('src', './images/checkbox_check.png');
+                    }
+                }
+                closeSelect();
+            })
+        })
+        function showSelect() {
+            $('.select').show();
+        }
+        function closeSelect() {
+            $('.select').hide();
+        }
+    </script>
+</body>
+
+</html>

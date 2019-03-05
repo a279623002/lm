@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>制定计划</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/planAdd.css">
+    <style>
+        header {
+            padding: .5rem;
+        }
+        header p {
+            display: inline-block;
+            width: 75%;
+            text-indent: 16%;
+            font-size: .9rem;
+            height: 1.3rem;
+            text-align: center;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        header p span.back {
+            width: 1.3rem;
+            height: 1.3rem;
+            background: url(./images/back.png) no-repeat center center;
+            background-size: contain;
+            display: inline-block;
+            float: left;
+        }
+        header a {
+            width: 25%;
+            text-decoration: none;
+            color: #333333;
+            float: right;
+            text-align: right;
+            font-size: .9rem;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mask"></div>
+    <div id="help">
+        <img src="./images/help_img01.png" id="helpImg" alt="">
+        <div class="closehelp" onclick="javascript:closehelp();">
+            <img src="./images/guanbi.png" alt="">
+        </div>
+    </div>
+    <div id="renzhenBox">
+        <h2>尾号（8282）信用卡认证</h2>
+        <div class="row">
+            <label for="deadline">有效期</label>
+            <input type="text" id="deadline" name="deadline" placeholder="月/年 （如：0621）">
+            <img src="./images/help.png" alt="" onclick="showhelp(1)">
+        </div>
+        <div class="row">
+            <label for="cvn">CVN2</label>
+            <input type="password" id="cvn" name="cvn" placeholder="信用卡背后签名栏后三位数">
+            <img src="./images/help.png" alt="" onclick="showhelp(2)">
+        </div>
+        <div class="row">
+            <button onclick="closeRenzhen()">取消</button>
+            <button onclick="closeRenzhen()">确定</button>
+        </div>
+
+    </div>
+    <header>
+        <p>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            制定计划
+        </p>
+        <a href="./huankuanguize.html">还款规则</a>
+    </header>
+    <div class="plan-box">
+        <div class="plan-contain">
+            <div class="contain-top">
+                <img src="./images/yinhan_logo.png" alt="">
+                <dt>银行名称</dt>
+                <dd>*姓名 尾号9763</dd>
+                <span>信用卡</span>
+            </div>
+            <div class="contain-bottom">
+                <div class="contain-col">
+                    <dt>应还金额</dt>
+                    <dd>1000.00</dd>
+                </div>
+                <div class="contain-col">
+                    <dt>账单日</dt>
+                    <dd>13日</dd>
+                </div>
+                <div class="contain-col">
+                    <dt>还款日</dt>
+                    <dd>2日</dd>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="" id="planAdd01">
+        <div class="row">
+            <label for="money">还款金额</label>
+            <input type="number" name="money" placeholder="请输入还款金额">
+        </div>
+        <button class="plan-btn" onclick="firstSept();return false;">生成计划</button>
+    </form>
+    <form action="" id="planAdd02">
+        <div class="row">
+            <label for="money">还款金额</label>
+            <input type="number" name="money" placeholder="请输入还款金额">
+            <a href="#">生成计划</a>
+        </div>
+        <div class="row">
+            <label for="picker">所在地区</label>
+            <input type="text" name="picker" id="picker" readonly placeholder="请选择消费地区">
+            <span onclick="picker.show();"></span>
+        </div>
+        <div class="row select">
+            <label for="money">总手续费</label>
+            <input type="number" name="money" value="0.00" disabled>
+            <span>银联C</span>
+            <div class="selectBox">
+                <div class="select-row">
+                    <dt>银联C</dt>
+                    <dd>支持银行多带积分</dd>
+                </div>
+                <div class="select-row">
+                    <dt>银联E</dt>
+                    <dd>大额度多带积分</dd>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="money">所需卡余额</label>
+            <input type="number" name="money" value="0.00" disabled>
+        </div>
+        <div id="date">
+            <div class="title">
+                <h2>选择还款日期<a href="#">全选</a></h2>
+                <p>推荐还款天数为：4天</p>
+            </div>
+            <div class="date-box" id="date-box"></div>
+            <p>还款天数越多所需卡余额越低</p>
+        </div>
+        <button class="plan-btn" onclick="javascript:window.location.href='./planDetail.html';return false;">预览计划</button>
+    </form>
+    <script src="js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/laydate/laydate.js"></script>
+    <script>
+        laydate.render({
+            elem: '#date-box'
+            , theme: '#4194fe'
+            , position: 'static'
+            , showBottom: false
+            , lang: 'zh'
+            , min: -7
+            , max: 7
+            , range: true
+        });
+    </script>
+    <script>
+        function closehelp() {
+            $('#help').hide();
+        }
+        function showhelp(ID) {
+            $('#helpImg').attr('src', './images/help_img0' + ID + '.png');
+            $('#help').show();
+        }
+        function firstSept() {
+            $('#planAdd01').hide();
+            $('#planAdd02').show();
+            $('header a').css('display', 'inline-block');
+            showRenzhen();
+        }
+        function showRenzhen() {
+            $('#mask').show();
+            $('#renzhenBox').show();
+        }
+        function closeRenzhen() {
+            $('#mask').hide();
+            $('#renzhenBox').hide();
+        }
+
+    </script>
+    <script>
+        $(function () {
+            $('#planAdd02 .select .selectBox .select-row:first').css('background', 'url(./images/check_true.png) no-repeat right center');
+            $('#planAdd02 .select .selectBox .select-row:first').css('background-size', '1rem');
+            $('#planAdd02 .select .selectBox .select-row').click(function () {
+                $('#planAdd02 .select .selectBox .select-row').css('background', 'url(./images/check_false.png) no-repeat right center');
+                $('#planAdd02 .select .selectBox .select-row').css('background-size', '1rem');
+                $(this).css('background', 'url(./images/check_true.png) no-repeat right center');
+                $(this).css('background-size', '1rem');
+                $(this).parent().parent().find('span').text($(this).find('dt').text());
+                $(this).parent().hide();
+            })
+        })
+        $(function () {
+            $('#planAdd02 .select span').click(function () {
+                $('#planAdd02 .select .selectBox').toggle();
+            })
+        })
+
+    </script>
+
+    <script src="./js/city/picker.min.js"></script>
+    <script type="text/javascript" src="./js/city/city.js"></script>
+    <script type="text/javascript" src="./js/city/index.js"></script>
+    <div class="picker" style="display: none;">
+        <div class="picker-mask mask-hook "></div>
+        <div class="picker-panel panel-hook ">
+            <div class="picker-choose choose-hook">
+                <span class="cancel cancel-hook">取消</span>
+                <span class="confirm confirm-hook">确定</span>
+                <h1 class="picker-title">城市选择</h1>
+            </div>
+            <div class="picker-content">
+                <div class="mask-top border-1px"></div>
+                <div class="mask-bottom border-1px"></div>
+                <div class="wheel-wrapper wheel-wrapper-hook">
+
+                    <div class="wheel wheel-hook">
+                        <ul class="wheel-scroll wheel-scroll-hook" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: translate(0px, -36px) translateZ(0px);">
+
+                            <li class="wheel-item" data-val="0" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(-25deg);">北京</li>
+
+                            <li class="wheel-item" data-val="1" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(0deg);">广东</li>
+
+                            <li class="wheel-item" data-val="2" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(25deg);">上海</li>
+
+                            <li class="wheel-item" data-val="3" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(50deg);">天津</li>
+
+                            <li class="wheel-item" data-val="4" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(75deg);">重庆</li>
+
+                            <li class="wheel-item" data-val="5" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(100deg);">辽宁</li>
+
+                            <li class="wheel-item" data-val="6" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(125deg);">江苏</li>
+
+                            <li class="wheel-item" data-val="7" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(150deg);">湖北</li>
+
+                            <li class="wheel-item" data-val="8" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(175deg);">四川</li>
+
+                            <li class="wheel-item" data-val="9" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(200deg);">陕西</li>
+
+                            <li class="wheel-item" data-val="10" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(225deg);">河北</li>
+
+                            <li class="wheel-item" data-val="11" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(250deg);">山西</li>
+
+                            <li class="wheel-item" data-val="12" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(275deg);">河南</li>
+
+                            <li class="wheel-item" data-val="13" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(300deg);">吉林</li>
+
+                            <li class="wheel-item" data-val="14" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(325deg);">黑龙江</li>
+
+                            <li class="wheel-item" data-val="15" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(350deg);">内蒙古</li>
+
+                            <li class="wheel-item" data-val="16" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(375deg);">山东</li>
+
+                            <li class="wheel-item" data-val="17" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(400deg);">安徽</li>
+
+                            <li class="wheel-item" data-val="18" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(425deg);">浙江</li>
+
+                            <li class="wheel-item" data-val="19" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(450deg);">福建</li>
+
+                            <li class="wheel-item" data-val="20" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(475deg);">湖南</li>
+
+                            <li class="wheel-item" data-val="21" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(500deg);">广西</li>
+
+                            <li class="wheel-item" data-val="22" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(525deg);">江西</li>
+
+                            <li class="wheel-item" data-val="23" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(550deg);">贵州</li>
+
+                            <li class="wheel-item" data-val="24" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(575deg);">云南</li>
+
+                            <li class="wheel-item" data-val="25" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(600deg);">西藏</li>
+
+                            <li class="wheel-item" data-val="26" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(625deg);">海南</li>
+
+                            <li class="wheel-item" data-val="27" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(650deg);">甘肃</li>
+
+                            <li class="wheel-item" data-val="28" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(675deg);">宁夏</li>
+
+                            <li class="wheel-item" data-val="29" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(700deg);">青海</li>
+
+                            <li class="wheel-item" data-val="30" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(725deg);">新疆</li>
+
+                            <li class="wheel-item" data-val="31" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(750deg);">香港</li>
+
+                            <li class="wheel-item" data-val="32" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(775deg);">澳门</li>
+
+                            <li class="wheel-item" data-val="33" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(800deg);">台湾</li>
+
+                            <li class="wheel-item" data-val="34" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(825deg);">海外</li>
+
+                            <li class="wheel-item" data-val="35" style="transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; transform: rotateX(850deg);">其他</li>
+
+                        </ul>
+                    </div>
+
+                    <div class="wheel wheel-hook">
+                        <ul class="wheel-scroll wheel-scroll-hook" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                            <li class="wheel-item" data-val="0" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(0deg);">广州</li>
+
+                            <li class="wheel-item" data-val="1" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(25deg);">深圳</li>
+
+                            <li class="wheel-item" data-val="2" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(50deg);">珠海</li>
+
+                            <li class="wheel-item" data-val="3" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(75deg);">汕头</li>
+
+                            <li class="wheel-item" data-val="4" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(100deg);">韶关</li>
+
+                            <li class="wheel-item" data-val="5" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(125deg);">佛山</li>
+
+                            <li class="wheel-item" data-val="6" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(150deg);">江门</li>
+
+                            <li class="wheel-item" data-val="7" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(175deg);">湛江</li>
+
+                            <li class="wheel-item" data-val="8" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(200deg);">茂名</li>
+
+                            <li class="wheel-item" data-val="9" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(225deg);">肇庆</li>
+
+                            <li class="wheel-item" data-val="10" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(250deg);">惠州</li>
+
+                            <li class="wheel-item" data-val="11" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(275deg);">梅州</li>
+
+                            <li class="wheel-item" data-val="12" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(300deg);">汕尾</li>
+
+                            <li class="wheel-item" data-val="13" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(325deg);">河源</li>
+
+                            <li class="wheel-item" data-val="14" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(350deg);">阳江</li>
+
+                            <li class="wheel-item" data-val="15" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(375deg);">清远</li>
+
+                            <li class="wheel-item" data-val="16" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(400deg);">东莞</li>
+
+                            <li class="wheel-item" data-val="17" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(425deg);">中山</li>
+
+                            <li class="wheel-item" data-val="18" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(450deg);">潮州</li>
+
+                            <li class="wheel-item" data-val="19" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(475deg);">揭阳</li>
+
+                            <li class="wheel-item" data-val="20" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(500deg);">云浮</li>
+
+                            <li class="wheel-item" data-val="21" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(525deg);">其他</li>
+                        </ul>
+                    </div>
+
+                    <div class="wheel wheel-hook">
+                        <ul class="wheel-scroll wheel-scroll-hook" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                            <li class="wheel-item" data-val="0" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(0deg);">越秀区</li>
+
+                            <li class="wheel-item" data-val="1" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(25deg);">荔湾区</li>
+
+                            <li class="wheel-item" data-val="2" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(50deg);">海珠区</li>
+
+                            <li class="wheel-item" data-val="3" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(75deg);">天河区</li>
+
+                            <li class="wheel-item" data-val="4" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(100deg);">白云区</li>
+
+                            <li class="wheel-item" data-val="5" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(125deg);">黄埔区</li>
+
+                            <li class="wheel-item" data-val="6" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(150deg);">番禺区</li>
+
+                            <li class="wheel-item" data-val="7" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(175deg);">花都区</li>
+
+                            <li class="wheel-item" data-val="8" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(200deg);">南沙区</li>
+
+                            <li class="wheel-item" data-val="9" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(225deg);">萝岗区</li>
+
+                            <li class="wheel-item" data-val="10" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(250deg);">增城市</li>
+
+                            <li class="wheel-item" data-val="11" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(275deg);">从化市</li>
+
+                            <li class="wheel-item" data-val="12" style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: rotateX(300deg);">其他</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="picker-footer footer-hook"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

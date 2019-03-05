@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>帮助中心</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/help.css">
+</head>
+
+<body>
+
+    <h1><span onclick="javascript:history.go(-1);"></span>帮助中心</h1>
+    <header>
+        <img class="head-img" src="./images/help_banner.png" alt="">
+        <div class="help-nav">
+            <div class="help-col">
+                <img src="./images/help_xs.png" alt="">
+                新手引导
+            </div>
+            <div class="help-col" onclick="window.location.href='./helpHuankuan.html'">
+                <img src="./images/help_hk.png" alt="">
+                智能还款
+            </div>
+            <div class="help-col">
+                <img src="./images/help_sy.png" alt="">
+                收银取现
+            </div>
+            <div class="help-col">
+                <img src="./images/help_fx.png" alt="">
+                分享赚钱
+            </div>
+        </div>
+    </header>
+    <div class="help-list">
+        <div class="help-row" onclick="window.location.href='./helpSort.html'">
+            常见问题
+            <span>更多</span>
+        </div>
+        <div class="help-row" onclick="window.location.href='./helpDetail.html'">
+            常见问题
+        </div>
+    </div>
+    <div class="help-btn">
+        <a href="#">有其他问题，点此问我吧</a>
+    </div>
+    <script src="js/font.js"></script>
+</body>
+
+</html>

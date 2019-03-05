@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div id="mask"></div>
+    <div id="notice">
+        <img src="./images/notice.png" alt="">
+        <img src="./images/notice_close.png" onclick="javascript:closeNotice();" alt="">
+    </div>
+    <header>
+        <img src="./images/index_top.jpg" alt="" srcset="">
+    </header>
+    <nav>
+        <div class="nav-row">
+            <div class="nav-cols" onclick="javascript:window.location.href='./huankuan.html'">
+                <img src="./images/haikuan.png" alt="">
+                <p>智能还款</p>
+            </div>
+            <div class="nav-cols" onclick="javascript:window.location.href='./shouyin.html'">
+                <img src="./images/shouyin.png" alt="">
+                <p>快捷收银</p>
+            </div>
+            <div class="nav-cols">
+                <img src="./images/daihuan.png" alt="">
+                <p>助力还款</p>
+            </div>
+            <div class="nav-cols"onclick="javascript:window.location.href='./banka.html'">
+                <img src="./images/banka.png" alt="">
+                <p>办信用卡</p>
+            </div>
+            <div class="nav-tips">正在开发中，敬请期待!</div>
+        </div>
+    </nav>
+    <main>
+        <h1>热门推荐</h1>
+        <div class="main-items">
+            <div class="main-cols">
+                <img src="./images/changjianwewnti.png" alt="">
+                <dt>常见问题</dt>
+                <dd>快速了解平台</dd>
+            </div>
+            <div class="main-cols">
+                <img src="./images/huiyuan.png" alt="">
+                <dt>升级会员</dt>
+                <dd>升级更多优惠</dd>
+            </div>
+            <div class="main-cols">
+                <img src="./images/zhanghubaoxian.png" alt="">
+                <dt>账户保险</dt>
+                <dd>保障卡片安全</dd>
+            </div>
+            <div class="main-cols">
+                <img src="./images/wodeshouyi.png" alt="">
+                <dt>我的收益</dt>
+                <dd>查看账户余额</dd>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-cols">
+            <img src="./images/index_active.png" alt="" srcset="">
+            <p>首页</p>
+        </div>
+        <div class="footer-cols" onclick="javascript:window.location.href='./share.html'">
+            <img src="./images/share.png" alt="" srcset="">
+            <p>分享</p>
+        </div>
+        <div class="footer-cols" onclick="javascript:window.location.href='./user.html'">
+            <img src="./images/user.png" alt="" srcset="">
+            <p>我的</p>
+        </div>
+    </footer>
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        function closeNotice() {
+            document.getElementById("mask").style.display = "none";
+            document.getElementById("notice").style.display = "none";
+        }
+        function showNotice() {
+            document.getElementById("mask").style.display = "block";
+            document.getElementById("notice").style.display = "block";
+        }
+        $(function() {
+            showNotice();
+            $('.nav-row .nav-cols').eq(2).click(function() {
+                $('nav .nav-tips').fadeToggle();
+            })
+        })
+    </script>
+</body>
+
+</html>

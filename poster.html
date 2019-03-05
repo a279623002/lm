@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>海报二维码</title>
+    <link rel="stylesheet" href="./css/poster.css">
+</head>
+
+<body>
+    <h1><span onclick="javascript:history.go(-1);"></span>海报二维码</h1>
+    <nav>
+        <div class="nav-cols active">最新</div>
+        <div class="nav-cols">还款</div>
+        <div class="nav-cols">办卡</div>
+        <div class="nav-cols">收银</div>
+    </nav>
+    <main>
+        <div class="main-cols" onclick="javascript:window.location.href='./posterShare.html'">
+            <img src="./images/poster_demo01.jpg" alt="">
+        </div>
+        <div class="main-cols" onclick="javascript:window.location.href='./posterShare.html'">
+            <img src="./images/poster_demo02.jpg" alt="">
+        </div>
+        <div class="main-cols" onclick="javascript:window.location.href='./posterShare.html'">
+            <img src="./images/poster_demo01.jpg" alt="">
+        </div>
+        <div class="main-cols" onclick="javascript:window.location.href='./posterShare.html'">
+            <img src="./images/poster_demo02.jpg" alt="">
+        </div>
+    </main>
+    <script src="js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        $(function() {
+            $('.nav-cols').click(function() {
+                $(this).addClass('active').siblings().removeClass('active');
+            })
+        })
+    </script>
+</body>
+
+</html>

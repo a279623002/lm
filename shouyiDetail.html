@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>好友升级</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/user.css">
+    <style>
+        body {
+            background: #F5F5F5;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><span onclick="javascript:history.go(-1);"></span>好友升级</h1>
+    <div id="syDetail">
+        <div class="sy-row">
+            <div class="sy-top">
+                2019-02
+                <span>收益：￥888.88</span>
+            </div>
+            <div class="sy-bottom">
+                <div class="sy-item">
+                    <div class="sy-item-left">
+                        <img src="./images/user_head.png" alt="">
+                        <p>139****1684</p>
+                    </div>
+                    <div class="sy-item-right">
+                        <p>02/04 12:34</p>
+                        <p>好友升级 <span>+188.00</span></p>
+                    </div>
+                </div>
+                <div class="sy-item">
+                    <div class="sy-item-left">
+                        <img src="./images/user_head.png" alt="">
+                        <p>139****1684</p>
+                    </div>
+                    <div class="sy-item-right">
+                        <p>02/04 12:34</p>
+                        <p>好友升级 <span>+188.00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sy-row">
+            <div class="sy-top">
+                2019-02
+                <span>收益：￥888.88</span>
+            </div>
+            <div class="sy-bottom">
+                <div class="sy-item">
+                    <div class="sy-item-left">
+                        <img src="./images/user_head.png" alt="">
+                        <p>139****1684</p>
+                    </div>
+                    <div class="sy-item-right">
+                        <p>02/04 12:34</p>
+                        <p>好友升级 <span>+188.00</span></p>
+                    </div>
+                </div>
+                <div class="sy-item">
+                    <div class="sy-item-left">
+                        <img src="./images/user_head.png" alt="">
+                        <p>139****1684</p>
+                    </div>
+                    <div class="sy-item-right">
+                        <p>02/04 12:34</p>
+                        <p>好友升级 <span>+188.00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        $(function() {
+            $('#syDetail .sy-row .sy-top').click(function() {
+                if ($(this).parent().find('.sy-bottom').css('display') == 'none') {
+                    $(this).css('background', 'url(./images/up_gray.png) no-repeat right .5rem center');
+                    $(this).css('background-size', '.8rem');
+                    $(this).parent().find('.sy-bottom').slideDown("slow");
+                } else {
+                    $(this).css('background', 'url(./images/down_gray.png) no-repeat right .5rem center');
+                    $(this).css('background-size', '.8rem');
+                    $(this).parent().find('.sy-bottom').slideUp();
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

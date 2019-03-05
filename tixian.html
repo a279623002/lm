@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提现</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/user.css">
+    <style>
+        body {
+            background: #F5F5F5;
+        }
+
+        h1 {
+            padding: .5rem;
+        }
+
+        h1 a {
+            display: inline-block;
+            text-decoration: none;
+            color: #333333FF;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mask"></div>
+    <div id="cardSelect">
+        <h2><span onclick="closeCardList();"></span>选择银行卡</h2>
+        <p>储蓄卡</p>
+        <div class="card-list">
+            <div class="card-row">
+                <img src="./images/yinhan_logo.png" alt="">
+                <span class="cardBank">平安银行</span> （<span class="cardNumber">6101</span>）
+                <input type="radio" name="card">
+            </div>
+            <div class="card-row">
+                <img src="./images/yinhan_logo.png" alt="">
+                <span class="cardBank">建设银行</span> （<span class="cardNumber">6102</span>）
+                <input type="radio" name="card" checked>
+            </div>
+            <div class="card-row">
+                <img src="./images/yinhan_logo.png" alt="">
+                <span class="cardBank">浦发银行</span> （<span class="cardNumber">6102</span>）
+                <input type="radio" name="card">
+            </div>
+            <div class="card-row">
+                <img src="./images/yinhan_logo.png" alt="">
+                <span class="cardBank">工行银行</span> （<span class="cardNumber">6103</span>）
+                <input type="radio" name="card">
+            </div>
+        </div>
+        <div class="card-add" onclick="window.location.href='./addSavingCard.html'">
+            <img src="./images/add_blue.png" alt="">
+            添加银行卡
+        </div>
+    </div>
+    <div id="tixianPw">
+        <h2><span onclick="closePw();"></span>请输入支付密码</h2>
+        <div class="passwordDiv">
+            <label for="ipt" class="passwordLabel">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </label>
+            <input type="password" id="password" name="password" maxlength="6">
+        </div>
+        <div class="password-bottom">
+            <a href="#">忘记密码</a>
+            <a href="javascript:void(0);" onclick="clearPw();">修改密码</a>
+        </div>
+    </div>
+    <h1><span onclick="javascript:history.go(-1);"></span>提现<a href="./huankuanLog.html">明细</a></h1>
+    <form action="" id="tixian">
+        <div class="tixian-row" onclick="showCardList();">
+            <img src="./images/yinhan_logo.png" alt="">
+            <span class="cardBank">平安银行</span>
+            &nbsp;
+            &nbsp;
+            尾号 (<span class="cardNumber">6666</span> )
+        </div>
+        <div class="tixian-row">
+            <label for="money">￥</label>
+            <input type="number" name="money" placeholder="0.00">
+            <a href="#">全部转出</a>
+        </div>
+        <div class="tixian-tips">提现需收取2元提现手续费</div>
+        <div class="tixian-btn" onclick="showPw();">确认转出</div>
+    </form>
+    <script src="js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        function closeCardList() {
+            $('#mask').hide();
+            $('#cardSelect').hide();
+        }
+        function showCardList() {
+            $('#mask').show();
+            $('#cardSelect').show();
+        }
+        function setCard(img, cardBank, cardNumber) {
+            $('#tixian .tixian-row:first img').attr('src', img);
+            $('#tixian .tixian-row:first .cardBank').text(cardBank);
+            $('#tixian .tixian-row:first .cardNumber').text(cardNumber);
+        }
+
+        // 选择银行卡时把对应的radio check上并打勾，其他radio则 不check并取消打勾，并把选择的值付给表单里
+        $(function () {
+            $('#cardSelect .card-list .card-row ').click(function () {
+                if ($(this).find('input').attr('checked')) {
+                    $(this).find('input').attr('checked', true);
+                } else {
+                    $(this).css('background', 'url(./images/check_blue.png) no-repeat right .5rem center');
+                    $(this).css('background-size', '1rem');
+                    $(this).find('input').attr('checked', true);
+                    $(this).siblings().css('background', 'none');
+                    $(this).siblings().find('input').attr('checked', false);
+                }
+                var img = $(this).find('img').attr('src');
+                var cardBank = $(this).find('.cardBank').text();
+                var cardNumber = $(this).find('.cardNumber').text();
+                setCard(img, cardBank, cardNumber);
+                closeCardList();
+            })
+        })
+
+        // 开始时判断有check的元素则打勾，并把值赋给表单里
+        $(function () {
+            $('#cardSelect .card-list .card-row ').each(function () {
+                if ($(this).find('input').attr('checked')) {
+                    $(this).css('background', 'url(./images/check_blue.png) no-repeat right .5rem center');
+                    $(this).css('background-size', '1rem');
+                    $(this).find('input').attr('checked', true);
+                    $(this).siblings().css('background', 'none');
+                    $(this).siblings().find('input').attr('checked', false);
+                    var img = $(this).find('img').attr('src');
+                    var cardBank = $(this).find('.cardBank').text();
+                    var cardNumber = $(this).find('.cardNumber').text();
+                    setCard(img, cardBank, cardNumber);
+                } else {
+                    $(this).css('background', 'none');
+                    $(this).find('input').attr('checked', false);
+                }
+            })
+        })
+    </script>
+    <script>
+        function closePw() {
+            $('#mask').hide();
+            $('#tixianPw').hide();
+        }
+        function showPw() {
+            $('#mask').show();
+            $('#tixianPw').show();
+        }
+
+        //修改密码
+        function clearPw() {
+            $('.passwordDiv ul li').text('');
+        }
+        //密码框输入事件
+        $('.passwordDiv input').on('input', function (e) {
+            var number = 6;
+            var pw = $("input[name = 'password']").val();
+            var list = $('.passwordDiv ul li');
+            for (var i = 0; i < number; i++) {
+                if (pw[i]) {
+                    $(list[i]).text('•');
+                } else {
+                    $(list[i]).text('');
+                };
+            };
+            if (pw.length == 6) {
+                closePw();
+            }
+        });
+        //点击密码框清除密码
+        $('.passwordDiv ul').click(function () {
+            $("input[name = 'password']").val('');
+            $('#password').focus();
+        });
+
+    </script>
+</body>
+
+</html>

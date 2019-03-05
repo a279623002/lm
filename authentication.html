@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实名认证页</title>
+    <link rel="stylesheet" href="./css/regist.css">
+</head>
+
+<body>
+    <h1><span onclick="javascript:history.go(-1);">&times;</span>实名认证</h1>
+    <form action="">
+        <div class="row">
+            <label for="name">姓名</label>
+            <input type="text" id="name" name="name" placeholder="请输入姓名">
+        </div>
+        <div class="row">
+            <label for="idcard">身份证</label>
+            <input type="password" id="idcard" name="idcard" placeholder="请输入身份证号码">
+        </div>
+        <div class="row">
+            <label for="savingCard">储蓄卡</label>
+            <input type="password" id="savingCard" name="savingCard" placeholder="再次输入储蓄卡号码">
+        </div>
+        <div class="row">
+            <label for="mobile">手机号</label>
+            <input type="number" id="mobile" name="mobile" placeholder="请输入银行预留手机号">
+        </div>
+        <div class="row">
+            <label for="code">验证码</label>
+            <input type="password" id="code" name="code" placeholder="请输入短信验证码" style="width: 45%;">
+            <div class="code">获取验证码</div>
+        </div>
+        <div class="photo">
+            <div class="cols">
+                <table>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <img src="./images/idcard.jpg" style="width:100%;" id="img_idcard" onclick="idcardUpload();">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">身份证正面</td>
+                    </tr>
+                </table>
+                <input type="file" id="input_upload_idcard" style="display: none" accept="image/jpg, image/png, image/jpeg"
+                    onChange="preview(this,'img_idcard');">
+            </div>
+            <div class="cols">
+                <table>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <img src="./images/idcardback.jpg" style="width:100%;" id="img_idcardback" onclick="idcardbackUpload();">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">身份证反面</td>
+                    </tr>
+                </table>
+                <input type="file" id="input_upload_idcardback" style="display: none" accept="image/jpg, image/png, image/jpeg"
+                    onChange="preview(this,'img_idcardback');">
+            </div>
+            <div class="cols">
+                <table>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <img src="./images/idcardholding.jpg" style="width:100%;" id="img_idcardholding" onclick="idcardholdingUpload();">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">手持身份证正面</td>
+                    </tr>
+                </table>
+                <input type="file" id="input_upload_idcardholding" style="display: none" accept="image/jpg, image/png, image/jpeg"
+                    onChange="preview(this,'img_idcardholding');">
+            </div>
+            <div class="cols">
+                <table>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <img src="./images/savingcard.jpg" style="width:100%;" id="img_savingcard" onclick="savingcardUpload();">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">银行卡正面</td>
+                    </tr>
+                </table>
+                <input type="file" id="input_upload_savingcard" style="display: none" accept="image/jpg, image/png, image/jpeg"
+                    onChange="preview(this,'img_savingcard');">
+            </div>
+        </div>
+
+        <div class="next-btn">提交审核</div>
+    </form>
+    <script src="js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        /**
+         * 文件上传
+         */
+        function idcardUpload() {
+            $('#input_upload_idcard').click(); // 模拟文件上传按钮点击操作
+        }
+        function idcardbackUpload() {
+            $('#input_upload_idcardback').click(); // 模拟文件上传按钮点击操作
+        }
+        function idcardholdingUpload() {
+            $('#input_upload_idcardholding').click(); // 模拟文件上传按钮点击操作
+        }
+        function savingcardUpload() {
+            $('#input_upload_savingcard').click(); // 模拟文件上传按钮点击操作
+        }
+
+        /**
+         * 缩略图预览
+         * @param file
+         * @param container
+         */
+        var preview = function (file, container) {
+            //缩略图类定义
+            var Picture = function (file, container) {
+                var height = 0,
+                    width = 0,
+                    ext = '',
+                    size = 0,
+                    name = '',
+                    path = '';
+                var self = this;
+                if (file) {
+                    name = file.value;
+                    if (window.navigator.userAgent.indexOf("MSIE") >= 1) {
+                        file.select();
+                        path = document.selection.createRange().text;
+                    } else {
+                        if (file.files) {
+                            // path =  file.files.item(0).getAsDataURL(); // firefox7.0之后该方法弃用了，用下面那个
+                            path = window.URL.createObjectURL(file.files[0]);
+                        } else {
+                            path = file.value;
+                        }
+                    }
+                } else {
+                    throw '无效的文件';
+                }
+                ext = name.substr(name.lastIndexOf("."), name.length);
+                if (container.tagName.toLowerCase() != 'img') {
+                    throw '不是一个有效的图片容器';
+                    container.visibility = 'hidden';
+                }
+                container.src = path;
+                container.alt = name;
+                container.style.visibility = 'visible';
+                height = container.height;
+                width = container.width;
+                size = container.fileSize;
+                this.get = function (name) {
+                    return self[name];
+                };
+                this.isValid = function () {
+                    if (allowExt.indexOf(self.ext) !== -1) {
+                        throw '不允许上传该文件类型';
+                        return false;
+                    }
+                }
+            };
+
+            try {
+                var pic = new Picture(file, document.getElementById('' + container));
+            } catch (e) {
+                alert(e);
+            }
+        };
+    </script>
+</body>
+
+</html>

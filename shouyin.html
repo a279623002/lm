@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>收银</title>
+    <link rel="stylesheet" href="./css/shouyin.css">
+    <style>
+        header {
+            padding: .5rem;
+        }
+        header p {
+            display: inline-block;
+            width: 80%;
+            text-indent: 16%;
+        }
+        header a {
+            width: 13%;
+            display: inline-block;
+            text-decoration: none;
+            color: #333333;
+            float: right;
+            text-align: right;
+            font-size: .9rem;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="mask" onclick="javascript:closeCard();"></div>
+    <div id="addCard">
+        <h1>选择信用卡<img src="./images/guanbi.png" alt="" onclick="javascript:closeCard();"></h1>
+        <div class="addCard-row">
+            <img src="./images/yinhan_logo.png" alt="">
+            浦发银行 （2796）
+        </div>
+        <div class="addCard-btn">+添加信用卡</div>
+    </div>
+    <header>
+        <p>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            收银
+        </p>
+        <a href="./shouyinLog.html">明细</a>
+    </header>
+    <form action="">
+        <div class="myForm">
+            <div class="row">
+                <div class="box">
+                    <label for="money">金额：</label>
+                    <input type="number" name="money" id="money" placeholder="请输入金额">
+                    <p id="showType">快捷支付B<img src="./images/select.png"></p>
+                    <h2>收银费率：0.5%+2<span>到账金额<small>0.00</small>元</span></h2>
+                </div>
+
+                <div class="pay-type">
+                    <div class="pay-row">
+                        <span>快捷支付B</span>
+                        <input type="radio" name="agree" value="" checked>
+                        <label for="agree" class="after-radio"></label>
+                    </div>
+                    <div class="pay-row">
+                        <span>快捷支付C</span>
+                        <input type="radio" name="agree" value="">
+                        <label for="agree"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="item" onclick="javascript:showCard();">
+                <label>取现信用卡</label>
+                <p><img src="./images/yinhan_logo.png" alt="">浦发银行 尾号2796</p>
+            </div>
+            <div class="item" onclick="javascript:showCard();">
+                <label>到账储蓄卡</label>
+                <p><img src="./images/yinhan_logo.png" alt="">浦发银行 尾号2796</p>
+            </div>
+        </div>
+        <div class="notice">
+            温习提示：
+            <br />
+            支持消费仅限本人名下信用卡 <a>(查看支持银行列表)</a>
+        </div>
+        <div class="form-btn">立即收银</div>
+    </form>
+    <div class="footer-btn">
+        <img src="./images/footer_btn.png" alt="">
+        升级为代言人，本次收银可省8元
+        <span>立即开通</span>
+    </div>
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        $('.pay-row label').click(function () {
+            if ($(this).hasClass('after-radio')) {
+                $('.pay-type').hide();
+            } else {
+                $('.pay-row label').removeClass('after-radio');
+                $('.pay-type input').attr('checked', false);
+                $(this).addClass('after-radio');
+                $(this).parent().find('input').attr('checked', true);
+                var text = $(this).parent().find('span').html() + '<img src="./images/select.png">';
+                $('#showType').html(text);
+                $('.pay-type').hide();
+            }
+        })
+        $('#showType').click(function () {
+            $('.pay-type').show();
+        })
+        function closeCard() {
+            document.getElementById("mask").style.display = "none";
+            document.getElementById("addCard").style.display = "none";
+        }
+        function showCard() {
+            document.getElementById("mask").style.display = "block";
+            document.getElementById("addCard").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+/* 登录样式开始 */
+* {
+    font-family: Microsoft YaHei;
+}
+
+html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: url(../images/login_bg.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.top {
+    width: 80%;
+    margin: 3rem auto 2rem auto;
+    text-align: center;
+}
+
+.top .top-img {
+    width: 4rem;
+    margin: 0 auto;
+    height: 4rem;
+    border-radius: 4rem;
+    overflow: hidden;
+    background: url(../images/login_logo.png) no-repeat center center;
+    background-size: contain;
+}
+
+.top p {
+    color: #fff;
+    font-size: 1rem;
+    margin: .5rem auto;
+}
+
+form#login {
+    width: 70%;
+    margin: 0 auto;
+}
+
+form#login .row {
+    width: 100%;
+    border-bottom: 1px solid #F5F5F5;
+    height: 3rem;
+    line-height: 3rem;
+    overflow: hidden;
+}
+
+form#login .row .phone {
+    width: 1.3rem;
+    height: 1.3rem;
+    background: url(../images/login_mobile.png) no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    margin-top: .8rem;
+    float: left;
+}
+
+form#login .row .lock {
+    width: 1.3rem;
+    height: 1.3rem;
+    background: url(../images/login_lock.png) no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    margin-top: .8rem;
+    float: left;
+}
+
+form#login .row input {
+    float: left;
+    width: 70%;
+    height: 1.5rem;
+    padding: 0;
+    border: none;
+    float: left;
+    margin-left: 1rem;
+    font-size: .8rem;
+    color: #fff;
+    background: none;
+    margin-top: .8rem;
+}
+
+form#login .row span {
+    float: right;
+    color: #FFF;
+    display: inline-block;
+}
+
+form#login .login {
+    height: 2rem;
+    line-height: 2rem;
+    width: 100%;
+    border-radius: 2rem;
+    color: #FFF;
+    font-size: .8rem;
+    cursor: pointer;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.8rem;
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+}
+
+.buttom {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.buttom a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 0.7rem;
+}
+
+.buttom a:first-child {
+    float: left;
+    margin-left: 1rem;
+}
+
+.buttom a:last-child {
+    float: right;
+    margin-right: 1rem;
+}
+
+/* 登录样式 结束 */
+

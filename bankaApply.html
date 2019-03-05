@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>办信用卡-申请</title>
+    <link rel="stylesheet" href="./css/banka.css">
+    <style>
+        body {
+            background: #F5F5F5FF;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="mask"></div>
+    <div id="confirm">
+        <h2>以下申请人信息必须与后续信用卡申请表所填信息一致，请仔细检查</h2>
+        <div class="confirm-contain">
+            <p><img src="./images/xingming.png" alt="">申请人姓名：<span>1</span></p>
+            <p><img src="./images/idcard.png" alt="">身份证号：<span>1</span></p>
+            <p><img src="./images/shouji.png" alt="">手机号码：<span>1</span></p>
+        </div>
+        <div class="confirm-btn">
+            <a href="javascript:void(0);" onclick="closeConfirm();">取消</a>
+            <a href="./addCard.html">确认无误</a>
+        </div>
+    </div>
+    <header>
+        <p>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            申请人信息
+        </p>
+    </header>
+    <div class="head-img">
+        <img src="./images/banka_banner.jpg" alt="">
+        <a href="./bankaShare.html"></a>
+    </div>
+    <form action="">
+        <div class="row">
+            <img src="./images/xingming.png" alt="">
+            <label for="name">申请人姓名：</label>
+            <input type="text" id="name" name="name" placeholder="请输入真实姓名">
+        </div>
+        <div class="row">
+            <img src="./images/idcard.png" alt="">
+            <label for="idcard" style="letter-spacing: 5px;">身份证号：</label>
+            <input type="number" id="idcard" name="idcard" placeholder="请输入身份证号">
+        </div>
+        <div class="row">
+            <img src="./images/shouji.png" alt="">
+            <label for="mobile" style="letter-spacing: 5px;">手机号码：</label>
+            <input type="number" id="mobile" name="mobile" placeholder="请输入手机号码">
+        </div>
+        <div class="row">
+            <img src="./images/yzm.png" alt="">
+            <label for="yzm">验证码：</label>
+            <input type="text" id="yzm" name="yzm" placeholder="请输入验证码" style="width: 5rem;">
+            <a href="#">获取验证码</a>
+        </div>
+        <p class="tips">温馨提示：<br />
+            以下申请人信息必须与后续信用卡申请表所填信息一致，请仔
+            细检查。<br />
+            若填写错误或虚假个人信息将导致审核被拒</p>
+
+        <div class="next-btn" onclick="showConfirm()">下一步</div>
+    </form>
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        function closeConfirm() {
+            $('#mask').hide();
+            $('#confirm').hide();
+        }
+        function showConfirm() {
+            $('#confirm .confirm-contain p:first span').text($('#name').val());
+            $('#confirm .confirm-contain p:nth-child(2) span').text($('#idcard').val());
+            $('#confirm .confirm-contain p:last span').text($('#mobile').val());
+            $('#mask').show();
+            $('#confirm').show();
+        }
+    </script>
+</body>
+
+</html>

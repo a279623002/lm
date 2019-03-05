@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>消息中心</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/user.css">
+    <style>
+        body {
+            background: #F5F5F5;
+        }
+
+        h1 {
+            padding: .5rem;
+        }
+
+        h1 span {
+            margin-right: 2rem;
+        }
+
+        h1 a {
+            display: inline-block;
+            text-decoration: none;
+            color: #333333FF;
+            float: right;
+        }
+
+        h1 a.read {
+            color: #CCCCCCFF !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h1><span onclick="javascript:history.go(-1);"></span>消息中心<a href="#" class="read">全部已读</a></h1> -->
+    <h1><span onclick="javascript:history.go(-1);"></span>消息中心<a href="#">全部已读</a></h1>
+    <div class="msg-row" onclick="javascript:window.location.href='./msgNotice.html'">
+        <div class="msg-left">
+            <img src="./images/msg_notice.png" alt="">
+            <span>1</span>
+        </div>
+        <div class="msg-right">
+            <h2>官方公告<span>2018/10/8</span></h2>
+            <p>尊敬的各位龙猫用户，为保证服务质量和质量和</p>
+        </div>
+    </div>
+    <div class="msg-row" onclick="javascript:window.location.href='./msgSystem.html'">
+        <div class="msg-left">
+            <img src="./images/msg_system.png" alt="">
+            <span>1</span>
+        </div>
+        <div class="msg-right">
+            <h2>系统消息<span>2018/10/8</span></h2>
+            <p>尊敬的各位龙猫用户，为保证服务质量和</p>
+        </div>
+    </div>
+    <div class="msg-row" onclick="javascript:window.location.href='./msgActive.html'">
+        <div class="msg-left">
+            <img src="./images/msg_active.png" alt="">
+            <span>1</span>
+        </div>
+        <div class="msg-right">
+            <h2>热门活动<span>2018/10/8</span></h2>
+            <p>尊敬的各位龙猫用户，为保证服务质量和</p>
+        </div>
+    </div>
+    <script src="js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+</body>
+
+</html>

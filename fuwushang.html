@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的团队</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/fuwushang.css">
+    <link rel="stylesheet" href="./js/date/Mdate.css">
+</head>
+
+<body>
+    <div id="mask"></div>
+    <header>
+        <p>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            我的团队
+            <span class="add" onclick="javascript:window.location.href='./fuwushangAdd.html'"></span>
+        </p>
+    </header>
+    <div class="nav-select">
+        <div class="select-col">今日</div>
+        <div class="select-col">全部团队</div>
+        <div class="select-box01">
+            <p>快捷选择</p>
+            <div class="box-nav">
+                <button class="select-active">今日</button>
+                <button>昨日</button>
+                <button>本周</button>
+                <button>本月</button>
+            </div>
+            <p>自定义</p>
+            <div class="input-row">
+                <label for="dateSelectorOne">数据开始日期</label>
+                <input type="text" id="dateSelectorOne" placeholder="选择日期" readonly>
+            </div>
+            <div class="input-row">
+                <label for="dateSelectorOne">数据结束日期</label>
+                <input type="text" id="dateSelectorTwo" placeholder="选择日期" readonly>
+            </div>
+            <div class="box-btn">
+                <div class="btn-col">重置</div>
+                <div class="btn-col">确定</div>
+            </div>
+        </div>
+        <div class="select-box02">
+            <button class="select-active">全部团队</button>
+            <button>黄小米</button>
+            <button>黄小米</button>
+            <button>黄小米</button>
+        </div>
+    </div>
+    <div class="fws-row">
+        <p>分润（元）</p>
+        <div class="fws-box">
+            <div class="fws-col">
+                <dt>获得分润</dt>
+                <dd><span>0.00</span></dd>
+            </div>
+            <div class="fws-col"></div>
+            <div class="fws-col">
+                <dt>累计分润</dt>
+                <dd><span>0.00</span></dd>
+            </div>
+        </div>
+    </div>
+    <div class="fws-row">
+        <p>贡献（元）</p>
+        <div class="fws-box">
+            <div class="fws-col">
+                <dt>为我贡献</dt>
+                <dd>0.00</dd>
+            </div>
+            <div class="fws-col"></div>
+            <div class="fws-col">
+                <dt>累计贡献</dt>
+                <dd>0.00</dd>
+            </div>
+        </div>
+    </div>
+    <div class="fws-row">
+        <p>人数（人）</p>
+        <div class="fws-box">
+            <div class="fws-col">
+                <dt>直推人数</dt>
+                <dd>0人</dd>
+            </div>
+            <div class="fws-col">
+                <dt>间推人数</dt>
+                <dd>0人</dd>
+            </div>
+            <div class="fws-col">
+                <dt>累计人数</dt>
+                <dd>0人</dd>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/date/iscroll.js"></script>
+    <script src="./js/date/Mdate.js"></script>
+    <script>
+        function showSelect(ID) {
+            $('#mask').show();
+            if (ID == 0) {
+                $('.select-box01').show();
+                $('.select-box02').hide();
+                $('.nav-select .select-col').eq(0).css('background', 'url(./images/select_up.png) no-repeat right 2rem center');
+                $('.nav-select .select-col').eq(0).css('background-size', '.5rem');
+                $('.nav-select .select-col').eq(1).css('background', 'url(./images/select.png) no-repeat right 2rem center');
+                $('.nav-select .select-col').eq(1).css('background-size', '.5rem');
+            } else {
+                $('.select-box01').hide();
+                $('.select-box02').show();
+                $('.nav-select .select-col').eq(0).css('background', 'url(./images/select.png) no-repeat right 2rem center');
+                $('.nav-select .select-col').eq(0).css('background-size', '.5rem');
+                $('.nav-select .select-col').eq(1).css('background', 'url(./images/select_up.png) no-repeat right 2rem center');
+                $('.nav-select .select-col').eq(1).css('background-size', '.5rem');
+            }
+        }
+        function closeSelect(ID) {
+            $('#mask').hide();
+            if (ID == 0) {
+                $('.select-box01').hide();
+                $('.nav-select .select-col').eq(0).css('background', 'url(./images/select.png) no-repeat right 2rem center');
+                $('.nav-select .select-col').eq(0).css('background-size', '.5rem');
+            } else {
+                $('.select-box02').hide();
+                $('.nav-select .select-col').eq(1).css('background', 'url(./images/select.png) no-repeat right 2rem center');
+                $('.nav-select .select-col').eq(1).css('background-size', '.5rem');
+            }
+        }
+        $(function () {
+            $('.nav-select .select-col').click(function () {
+                var index = $('.nav-select .select-col').index(this) + 1;
+                if ($('.select-box0' + index).css('display') == 'none') {
+                    showSelect(index - 1);
+                } else {
+                    closeSelect(index - 1);
+                }
+            })
+        })
+    </script>
+    <script>
+        new Mdate("dateSelectorOne");
+        new Mdate("dateSelectorTwo");
+        $(function () {
+            $('.select-box02 button').click(function () {
+                $(this).addClass('select-active').siblings().removeClass('select-active');
+                $('.nav-select .select-col').eq(1).text($(this).text());
+                $('.nav-select .select-col').eq(1).click();
+            })
+            $('.select-box01 .box-nav button').click(function () {
+                $(this).addClass('select-active').siblings().removeClass('select-active');
+            })
+            $('.select-box01 .box-btn .btn-col:last').click(function () {
+                if ($('.select-box01 .box-nav button').hasClass('select-active')) {
+                    $('.nav-select .select-col').eq(0).text($('.select-box01 .box-nav').find('.select-active').text());
+                    $('.nav-select .select-col').eq(0).click();
+                } else {
+                    var beginDate = $('#dateSelectorOne').attr('data-month') + '/' + $('#dateSelectorOne').attr('data-day');
+                    var endDate = $('#dateSelectorTwo').attr('data-month') + '/' + $('#dateSelectorTwo').attr('data-day');
+                    $('.nav-select .select-col').eq(0).text(beginDate + '~' + endDate);
+                    $('.nav-select .select-col').eq(0).click();
+                }
+            })
+            $('.select-box01 .box-btn .btn-col:first').click(function () {
+                $('.select-box01 .input-row input').val('选择日期');
+                $('.select-box01 .box-nav button:first').click();
+                $('.nav-select .select-col').eq(0).click();
+            })
+            $('.select-box01 .input-row').click(function() {
+                $('.select-box01 .box-nav button').removeClass('select-active');
+            })
+        })
+    </script>
+
+</body>
+
+</html>

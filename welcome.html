@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>引导页</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/welcome.css">
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="info">
+                    <img src="./images/welcome_bg1.jpg" alt="">
+                    <h1>账单管理</h1>
+                    <p>轻松管理，账单不再预期</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="info">
+                    <img src="./images/welcome_bg2.jpg" alt="">
+                    <h1>便捷还款</h1>
+                    <p>一键生成账单计划，自动化执行</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="info">
+                    <img src="./images/welcome_bg3.jpg" alt="">
+                    <h1>享受收益</h1>
+                    <p>优质分享，收益天天来</p>
+                </div>
+                
+                <div class="start"><a href="./login.html">立即体验</a></div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+    <script src="js/font.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    </script>
+</body>
+
+</html>

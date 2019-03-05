@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分享</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/share.css">
+</head>
+
+<body>
+    <div class="box-top">
+        <div class="top">
+            <dt>总收益（元）</dt>
+            <dd>1000.00</dd>
+            <a href="./shouyi.html">收益详情</a>
+        </div>
+        <div class="bottom">
+            <div class="bottom-cols">
+                <dt>00</dt>
+                <dd>今日收益</dd>
+            </div>
+            <div class="bottom-cols" onclick="javascript:window.location.href='./tuijian.html'">
+                <dt>1999</dt>
+                <dd>邀请人数</dd>
+            </div>
+            <div class="bottom-cols">
+                <dt>000B</dt>
+                <dd>我的推荐码</dd>
+            </div>
+        </div>
+    </div>
+    <div class="box-contain">
+        <div class="top">
+            <img src="./images/toutiao.png" alt="">
+            <marquee direction="up" behavior="scroll" scrollamount="1" align="top" bgcolor="#ffffff" hspace="10" vspace="10"
+                onmouseover="this.stop()" onmouseout="this.start()">
+                <p>188****2003刚刚获得还款分润0.37元</p>
+                <p>188****2003刚刚获得还款分润0.37元</p>
+            </marquee>
+        </div>
+        <div class="bottom">
+            <div class="bottom-cols">
+                <dt><img src="./images/eqcode.png" alt=""></dt>
+                <dd>独立二维码</dd>
+            </div>
+            <div class="bottom-cols" onclick="javascript:window.location.href='./poster.html'">
+                <dt><img src="./images/poster.png" alt=""></dt>
+                <dd>海报二维码</dd>
+            </div>
+            <div class="bottom-cols" onclick="javascript:window.location.href='./article.html'">
+                <dt><img src="./images/article.png" alt=""></dt>
+                <dd>朋友圈文案</dd>
+            </div>
+        </div>
+    </div>
+    <div class="box-bottom">
+        <h1>热门推荐</h1>
+        <div class="btn"><img src="./images/college.png" alt="">龙猫商学院</div>
+        <div class="btn" onclick="javascript:window.location.href='./quanyi.html'"><img src="./images/member.png" alt="">升级代言人</div>
+    </div>
+    <footer>
+        <div class="footer-cols" onclick="javascript:window.location.href='./index.html'">
+            <img src="./images/index.png" alt="" srcset="">
+            <p>首页</p>
+        </div>
+        <div class="footer-cols">
+            <img src="./images/share_active.png" alt="" srcset="">
+            <p>分享</p>
+        </div>
+        <div class="footer-cols" onclick="javascript:window.location.href='./user.html'">
+            <img src="./images/user.png" alt="" srcset="">
+            <p>我的</p>
+        </div>
+    </footer>
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+</body>
+
+</html>

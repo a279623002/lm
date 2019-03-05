@@ -1,0 +1,171 @@
+.box-top {
+    padding: 1rem 0;
+}
+
+.box-top .top {
+    position: relative;
+    text-align: center;
+    margin: 0 1rem;
+}
+
+.box-top .top dt {
+    font-size: .8rem;
+    color: #333333;
+    margin: 0;
+    text-align: center;
+}
+
+.box-top .top dd {
+    font-size: 1.5rem;
+    color: #F45600;
+    margin: .5rem 0 0 0;
+    text-align: center;
+    text-indent: -.5rem;
+}
+
+.box-top .top a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+    color: #369CFE;
+    font-size: .8rem;
+}
+
+.box-top .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    margin-top: 2rem;
+}
+
+.box-top .bottom .bottom-cols {
+    width: 33%;
+}
+
+.box-top .bottom .bottom-cols:nth-child(2) {
+    border-left: 1px solid #EFEFEF;
+    border-right: 1px solid #EFEFEF;
+}
+
+.box-top .bottom .bottom-cols dt {
+    text-align: center;
+    font-size: .8rem;
+    color: #333333;
+}
+
+.box-top .bottom .bottom-cols dd {
+    text-align: center;
+    font-size: .8rem;
+    margin: .5rem 0;
+    color: #333333;
+}
+
+.box-contain {
+    padding: 1rem;
+    border-top: .5rem solid #F5F5F5;
+    border-bottom: .5rem solid #F5F5F5;
+}
+
+.box-contain .top {
+    height: 2rem;
+    margin: 1rem;
+}
+
+.box-contain .top img {
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    float: left;
+}
+
+
+/* 滚动效果 */
+
+.box-contain .top marquee {
+    white-space: nowrap;
+    /* 文字不折行 */
+    overflow: -webkit-marquee;
+    /* 只有设置为marquee才有滚动效果 */
+    width: 70%;
+    height: 2rem;
+    margin: 0 0 0 1rem;
+    /* 不是必须的 */
+    -webkit-marquee-direction: left;
+    /* 文字滚动方向 可选值为left | right | up | down */
+    -webkit-marquee-speed: normal;
+    /* 文字滚动速度 可选值为slow | normal | fast */
+    -webkit-marquee-style: scroll;
+    /* 文字滚动方式 可选值为scroll | slide | alternate */
+    -webkit-marquee-repetition: 1;
+    /* 文字滚动次数 number | infinite ， infinite即无限次循环滚动 */
+}
+
+.box-contain .top marquee p {
+    font-size: .7rem;
+    margin: 0;
+    color: #333333;
+}
+
+.box-contain .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    margin-top: 1rem;
+}
+
+.box-contain .bottom .bottom-cols {
+    width: 33%;
+}
+
+.box-contain .bottom .bottom-cols dt {
+    text-align: center;
+}
+
+.box-contain .bottom .bottom-cols dt img {
+    width: 4.5rem;
+}
+
+.box-contain .bottom .bottom-cols dd {
+    text-align: center;
+    font-size: .8rem;
+    margin: .5rem 0;
+    color: #333333;
+}
+
+.box-bottom {
+    margin-bottom: 5rem;
+    overflow: hidden;
+}
+
+.box-bottom h1 {
+    padding: 0 0 0 .5rem;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: .8rem;
+    margin: 1.5rem 2rem;
+    font-weight: normal;
+    border-left: .2rem solid #3FA7FE;
+}
+
+.box-bottom .btn {
+    width: 6.5rem;
+    height: 1.7rem;
+    float: left;
+    border: 1px solid #E5E4E3;
+    border-radius: 1.7rem;
+    font-size: .8rem;
+    padding: .1rem .5rem;
+    line-height: 1.7rem;
+    margin-left: 1.5rem;
+}
+
+.box-bottom .btn img {
+    height: 1.5rem;
+    display: inline-block;
+    float: left;
+    margin-right: .3rem;
+}
+

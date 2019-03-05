@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>常见问题</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/help.css">
+</head>
+
+<body>
+
+    <h1><span onclick="javascript:history.go(-1);"></span>常见问题</h1>
+    <div class="sort-box">
+        <div class="sort-list">
+            <span>还款业务</span>
+            <div class="sort-row">
+                <p onclick="window.location.href='./helpDetail.html'">如何使用龙猫管家进行还款功能？</p>
+                <p>如何使用龙猫管家进行还款功能？</p>
+                <p>如何使用龙猫管家进行还款功能？</p>
+                <p>如何使用龙猫管家进行还款功能？</p>
+            </div>
+        </div>
+        <div class="sort-list">
+            <span>还款业务</span>
+            <div class="sort-row">
+                <p>如何使用龙猫管家进行还款功能？</p>
+            </div>
+        </div>
+    </div>
+    <div class="help-btn">
+        <a href="#">有其他问题，点此问我吧</a>
+    </div>
+    <script src="js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        $(function() {
+            $('.sort-list span').click(function() {
+                $('.sort-list span').removeClass('sort-active').next().hide();
+                $(this).addClass('sort-active').next().show();
+            })
+            $('.sort-list span:first').click();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+body {
+    background: #FFF;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+    font-size: .9rem;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    background: #FFF;
+    padding: .5rem 2.5rem .5rem .5rem;
+}
+
+h1 span {
+    width: 1.3rem;
+    height: 1.3rem;
+    background: url(../images/back.png) no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    float: left;
+    margin-top: .2rem;
+}
+
+.box {
+    padding: 1rem 0 .5rem 0;
+    border-bottom: .5rem solid #F5F5F5;
+}
+
+.box .box-top {
+    margin: 0 .5rem;
+    overflow: hidden;
+}
+
+.box .box-top .box-left {
+    width: 3rem;
+    float: left;
+    text-align: left;
+}
+
+.box .box-top .box-left dt {
+    font-size: .8rem;
+    color: #333333;
+}
+
+.box .box-top .box-left dd {
+    font-size: .7rem;
+    color: #999999;
+    margin: 0;
+}
+
+.box .box-top .box-right {
+    width: 15.3rem;
+    float: right;
+    margin-top: -.2rem;
+}
+
+.box .box-top .box-right p {
+    margin: 0;
+    padding: 0;
+    font-size: .8rem;
+    color: #333333;
+    text-align: left;
+    line-height: 1.4rem;
+}
+
+.box .box-top .box-right img {
+    width: 4rem;
+    display: block;
+    margin: .3rem 0;
+}
+
+.box .box-bottom {
+    margin: 1rem 0 0 0;
+    padding: .5rem .5rem 0 0;
+    border-top: 1px solid #efefef;
+    overflow: hidden;
+}
+
+.box .box-bottom .box-right {
+    width: 15.3rem;
+    float: right;
+    text-align: right;
+    height: 1.5rem;
+}
+
+.box .box-bottom .box-right span {
+    display: inline-block;
+    float: left;
+    color: #999999;
+    font-size: .8rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.box .box-bottom .box-right button {
+    height: 1.5rem;
+    width: 4.5rem;
+    color: #4194FE;
+    border: 1px solid #4194FE;
+    border-radius: .3rem;
+    background: none;
+    margin-left: .5rem;
+    display: inline-block;
+}

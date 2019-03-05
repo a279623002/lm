@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>交易明细</title>
+    <link rel="stylesheet" href="./css/shouyin.css">
+</head>
+
+<body>
+    <header style="padding: .5rem 2.5rem 0 .5rem;">
+        <p>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            交易明细
+        </p>
+    </header>
+    <nav>
+        <div class="nav-cols all" onclick="setClass(1)">全部</div>
+        <div class="nav-cols" onclick="setClass(2)">成功</div>
+        <div class="nav-cols" onclick="setClass(3)">待执行</div>
+        <div class="nav-cols" onclick="setClass(4)">执行中</div>
+        <div class="nav-cols" onclick="setClass(5)">失败</div>
+    </nav>
+    <main>
+        <div class="item">
+            <p>订单编号：TN12013810</p>
+            <p>提交时间：2018/08/20 18:45 <span class="span-right">还款银行：招商银行7527</span></p>
+            <p>还款金额：￥10000 <span class="span-right">总手续费：￥60.18</span></p>
+            <p>还款状态：<span class="span-success">成功</span></p>
+        </div>
+        <div class="item">
+            <p>订单编号：TN12013810</p>
+            <p>提交时间：2018/08/20 18:45 <span class="span-right">还款银行：招商银行7527</span></p>
+            <p>还款金额：￥10000 <span class="span-right">总手续费：￥60.18</span></p>
+            <p>还款状态：<span class="span-pending">执行中</span></p>
+        </div>
+        <div class="item">
+            <p>订单编号：TN12013810</p>
+            <p>提交时间：2018/08/20 18:45 <span class="span-right">还款银行：招商银行7527</span></p>
+            <p>还款金额：￥10000 <span class="span-right">总手续费：￥60.18</span></p>
+            <p>还款状态：<span class="span-waiting">待执行</span></p>
+        </div>
+        <div class="item">
+            <p>订单编号：TN12013810</p>
+            <p>提交时间：2018/08/20 18:45 <span class="span-right">还款银行：招商银行7527</span></p>
+            <p>还款金额：￥10000 <span class="span-right">总手续费：￥60.18</span></p>
+            <p>还款状态：<span class="span-fail">失败</span></p>
+            <p>失败原因：<span class="span-fail">卡上余额不足</span></p>
+        </div>
+    </main>
+
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        function clearNavClass() {
+            $('.nav-cols').removeClass('all success fail pending waiting');
+        }
+        function setClass(eq) {
+            clearNavClass();
+            switch (eq) {
+                case 1:
+                    $('.nav-cols').eq(0).addClass('all');
+                    break;
+            
+                case 2:
+                    $('.nav-cols').eq(1).addClass('success');
+                    break;
+            
+                case 3:
+                    $('.nav-cols').eq(2).addClass('waiting');
+                    break;
+            
+                case 4:
+                    $('.nav-cols').eq(3).addClass('pending');
+                    break;
+            
+                default:
+                    $('.nav-cols').eq(4).addClass('fail');
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

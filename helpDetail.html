@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>问题详情</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/help.css">
+    <style>
+        body {
+            background: #F5F5F5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mask"></div>
+    <div id="help02">
+        <h2>
+            感谢您的反馈！
+        </h2>
+        <p onclick="closeHelp();">我知道了</p>
+    </div>
+    <div id="help01">
+        <h2>
+            未能解决您的问题很抱歉，请问是哪方面造成您未能得到有效帮助
+        </h2>
+        <p>规则不合理</p>
+        <p>方法行不通</p>
+        <p>内容难理解</p>
+        <p>其他问题</p>
+        <div class="closehelp" onclick="javascript:closeHelp();">
+            <img src="./images/guanbi.png" alt="">
+        </div>
+    </div>
+    <h1><span onclick="javascript:history.go(-1);"></span>问题详情</h1>
+    <div class="detail-box">
+        <div class="box-top">
+            <span>Q</span><p>怎么利用5%卡余额还完100%账单金额？</p>
+            <span>A:</span><p>首先账单日到还款日期间存到信用卡里钱都是有效还款，再消费出来的金额是累计到下期账单。</p>
+        </div>
+        <div class="box-bottom">
+            <h2>相关问题</h2>
+            <p>龙猫还款和普通还款的区别在哪？</p>
+            <p>龙猫还款和普通还款的区别在哪？</p>
+            <p>龙猫还款和普通还款的区别在哪？</p>
+            <p>龙猫还款和普通还款的区别在哪？</p>
+        </div>
+        <div class="box-btn">
+            <span>问题是否解决？</span>
+            <button onclick="showHelp(1);">未解决</button>
+            <button onclick="showHelp(2);">已解决</button>
+        </div>
+    </div>
+    <div class="detail-bottom">
+        问题是否解决？
+        <button>联系在线客服</button>
+    </div>
+    <script src="js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        function showHelp(ID) {
+            $('#mask').show();
+            $('#help0' + ID).show();
+        }
+        function closeHelp() {
+            $('#mask').hide();
+            $('#help01').hide();
+            $('#help02').hide();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>还款计划</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/planAdd.css">
+    <style>
+        body {
+            background: #F5F5F5;
+        }
+
+        .plan-box .plan-contain .contain-bottom {
+            overflow: hidden;
+            border-top: 1px solid #e9e9e9;
+        }
+
+        .plan-box {
+            padding: .5rem;
+        }
+
+        h1 {
+            padding: .5rem;
+        }
+
+        h1 a img {
+            width: 1rem;
+            height: 1rem;
+            display: inline-block;
+            float: right;
+            margin-top: .3rem;
+        }
+
+        #showDate {
+            display: none;
+            width: 100%;
+            min-height: 15rem;
+            position: fixed;
+            bottom: 0;
+            z-index: 9999;
+            background: #FFF;
+            overflow: hidden;
+        }
+
+        .input-group {
+            /* display: none; */
+        }
+
+        .btn-all {
+            width: 60%;
+            height: 2rem;
+            line-height: 2rem;
+            border-radius: 2rem;
+            text-align: center;
+            color: #FFF;
+            font-size: .8rem;
+            background: #4194fe;
+            position: absolute;
+            bottom: 1rem;
+            left: 20%;
+            z-index: 9999999;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mask"></div>
+    <div id="showDate">
+        <div id="datePlugin"></div>
+        <div class="item item-buydate input-group">
+            <span class="input-group-span no-border-right" id="buydate-span">时间</span>
+            <input class="txt-input txt-buydate no-border-left text-right" type="text" placeholder="日期" readonly>
+        </div>
+        <div class="btn-all">查看全部</div>
+    </div>
+    <h1><span onclick="javascript:history.go(-1);"></span>还款计划<a href="javascript:void(0);" onclick="showDate();"><img
+                src="./images/date.png" alt=""></a></h1>
+    <nav>
+        <div class="nav-col nav-active">全部</div>
+        <div class="nav-col">进行中</div>
+        <div class="nav-col">已完成</div>
+        <div class="nav-col">已失败</div>
+        <div class="nav-col">已取消</div>
+    </nav>
+    <div class="plan-box">
+        <div class="plan-contain">
+            <div class="contain-top" style="border:none;">
+                <img src="./images/yinhan_logo.png" alt="">
+                <dt>银行名称 (9763)</dt>
+                <span class="pending">进行中</span>
+            </div>
+            <div class="contain-bottom">
+                <div class="contain-col">
+                    <dt>还款金额</dt>
+                    <dd>10000.00</dd>
+                </div>
+                <div class="contain-col">
+                    <dt>所需卡余额</dt>
+                    <dd>600</dd>
+                </div>
+                <div class="contain-col">
+                    <dt>手续费</dt>
+                    <dd>60.23</dd>
+                </div>
+            </div>
+            <div class="contain-date">
+                <p>还款首期：2018/09/27 至 2018/09/29</p>
+                <p>创建日期：2018/09/27 14：39：25</p>
+                <a href="./planLog.html">计划明细 ></a>
+            </div>
+            <div class="contain-btn">
+                <button>终止</button>
+            </div>
+        </div>
+    </div>
+    <div class="plan-box">
+        <div class="plan-contain">
+            <div class="contain-top" style="border:none;">
+                <img src="./images/yinhan_logo.png" alt="">
+                <dt>银行名称 (9763)</dt>
+                <span class="complete">已完成</span>
+            </div>
+            <div class="contain-bottom">
+                <div class="contain-col">
+                    <dt>还款金额</dt>
+                    <dd>10000.00</dd>
+                </div>
+                <div class="contain-col">
+                    <dt>所需卡余额</dt>
+                    <dd>600</dd>
+                </div>
+                <div class="contain-col">
+                    <dt>手续费</dt>
+                    <dd>60.23</dd>
+                </div>
+            </div>
+            <div class="contain-date">
+                <p>还款首期：2018/09/27 至 2018/09/29</p>
+                <p>创建日期：2018/09/27 14：39：25</p>
+                <a href="#">计划明细 ></a>
+            </div>
+            <div class="contain-btn">
+            </div>
+        </div>
+    </div>
+    <div class="plan-box">
+        <div class="plan-contain">
+            <div class="contain-top" style="border:none;">
+                <img src="./images/yinhan_logo.png" alt="">
+                <dt>银行名称 (9763)</dt>
+                <span class="fail">已失败</span>
+            </div>
+            <div class="contain-bottom">
+                <div class="contain-col">
+                    <dt>还款金额</dt>
+                    <dd>10000.00</dd>
+                </div>
+                <div class="contain-col">
+                    <dt>所需卡余额</dt>
+                    <dd>600</dd>
+                </div>
+                <div class="contain-col">
+                    <dt>手续费</dt>
+                    <dd>60.23</dd>
+                </div>
+            </div>
+            <div class="contain-date">
+                <p>还款首期：2018/09/27 至 2018/09/29</p>
+                <p>创建日期：2018/09/27 14：39：25</p>
+                <a href="#">计划明细 ></a>
+            </div>
+            <div class="contain-btn">
+                <p>FAIL交易失败，详情请咨询您的发卡行[1062000]</p>
+                <button>终止</button>
+                <button class="keep">继续执行</button>
+            </div>
+        </div>
+    </div>
+    <div class="plan-box">
+        <div class="plan-contain">
+            <div class="contain-top" style="border:none;">
+                <img src="./images/yinhan_logo.png" alt="">
+                <dt>银行名称 (9763)</dt>
+                <span class="cancel">已取消</span>
+            </div>
+            <div class="contain-bottom">
+                <div class="contain-col">
+                    <dt>还款金额</dt>
+                    <dd>10000.00</dd>
+                </div>
+                <div class="contain-col">
+                    <dt>所需卡余额</dt>
+                    <dd>600</dd>
+                </div>
+                <div class="contain-col">
+                    <dt>手续费</dt>
+                    <dd>60.23</dd>
+                </div>
+            </div>
+            <div class="contain-date">
+                <p>还款首期：2018/09/27 至 2018/09/29</p>
+                <p>创建日期：2018/09/27 14：39：25</p>
+                <a href="#">计划明细 ></a>
+            </div>
+            <div class="contain-btn">
+                <p>FAIL交易失败，详情请咨询您的发卡行[1062000]</p>
+                <button>删除</button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/date/iscroll.js"></script>
+    <script src="./js/date/date.js"></script>
+    <link rel="stylesheet" href="./js/date/date.css">
+    <script>
+        $('nav .nav-col').click(function () {
+            $(this).addClass('nav-active').siblings().removeClass('nav-active');
+        })
+    </script>
+    <script>
+        function showDate() {
+            $('#mask').show();
+            $('#showDate').show();
+            $('body').css('overflow', 'hidden');
+            $('#showDate input').click();
+        }
+        function closeDate() {
+            $('#mask').hide();
+            $('#showDate').hide();
+            $('body').css('overflow', 'auto');
+        }
+
+    </script>
+    <script>
+        $('.item-buydate').date({ title: '选择时间' });
+    </script>
+</body>
+
+</html>

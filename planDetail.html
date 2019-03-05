@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计划详情</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/planAdd.css">
+    <style>
+        body {
+            background: #F5F5F5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mask"></div>
+    <div id="detailNotice">
+        <h3>执行还款计划期间，请确保该卡余额不低于9264元</h3>
+        <p class="detail-tips">注：还款天数越长，所需卡余额越低</p>
+        <div class="row">
+            <button onclick="closeNotice()">取消</button>
+            <button onclick="closeNotice()">确定</button>
+        </div>
+
+    </div>
+    <h1><span onclick="javascript:history.go(-1);"></span>计划详情</h1>
+    <div class="plan-box">
+        <div class="plan-contain">
+            <div class="contain-top" style="border:none;">
+                <img src="./images/yinhan_logo.png" alt="">
+                <dt>银行名称 (9763)</dt>
+                <a href="#">重置账单</a>
+            </div>
+            <h3>还款日期： 2018/09/28至2018/09/30</h3>
+            <div class="contain-bottom">
+                <div class="contain-col">
+                    <dt>还款金额</dt>
+                    <dd>10000.00</dd>
+                </div>
+                <div class="contain-col">
+                    <dt>所需卡余额</dt>
+                    <dd>600</dd>
+                </div>
+                <div class="contain-col">
+                    <dt>手续费</dt>
+                    <dd>60.23</dd>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="detail-list">
+        <div class="list-top">
+            还款 ￥2514.00
+            <span>08/13 15:23</span>
+        </div>
+        <div class="list-row">
+            <span>消费：￥907.00</span>
+            <span>09.00</span>
+            <span>零售</span>
+        </div>
+        <div class="list-row">
+            <span>消费：￥907.00</span>
+            <span>09.00</span>
+            <span>零售</span>
+        </div>
+    </div>
+    <div class="detail-list">
+        <div class="list-top">
+            还款 ￥2514.00
+            <span>08/13 15:23</span>
+        </div>
+        <div class="list-row">
+            <span>消费：￥907.00</span>
+            <span>09.00</span>
+            <span>零售</span>
+        </div>
+        <div class="list-row">
+            <span>消费：￥907.00</span>
+            <span>09.00</span>
+            <span>零售</span>
+        </div>
+        <div class="list-row">
+            <span>消费：￥907.00</span>
+            <span>09.00</span>
+            <span>零售</span>
+        </div>
+        <div class="list-row">
+            <span>消费：￥907.00</span>
+            <span>09.00</span>
+            <span>零售</span>
+        </div>
+        <div class="list-row">
+            <span>消费：￥907.00</span>
+            <span>09.00</span>
+            <span>零售</span>
+        </div>
+        <div class="list-row">
+            <span>消费：￥907.00</span>
+            <span>09.00</span>
+            <span>零售</span>
+        </div>
+    </div>
+    <div class="detail-btn" onclick="javascript:window.location.href='./planSuccess.html';">执行计划</div>
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        function showNotice() {
+            $('#mask').show();
+            $('#detailNotice').show();
+        }
+        function closeNotice() {
+            $('#mask').hide();
+            $('#detailNotice').hide();
+        }
+        $(function () {
+            showNotice();
+        })
+    </script>
+</body>
+
+</html>

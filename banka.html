@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>办信用卡</title>
+    <link rel="stylesheet" href="./css/banka.css">
+</head>
+
+<body>
+    <div id="mask"></div>
+    <div id="notice">
+        <img class="close" src="./images/guanbi_banka.png" onclick="javascript:closeNotice();" alt="">
+        <div class="notice-box">
+            <div class="notice-top">
+                <div class="notice-center">
+                    <img src="./images/yinhan_logo.png" alt="">
+                    <h2>招商银行办卡佣金120元</h2>
+                </div>
+            </div>
+            <div class="notice-contain">
+                <div class="notice-col">
+                    <p>代言人直推：￥50</p>
+                    <p>代言人间推：￥50</p>
+                </div>
+                <div class="notice-col">
+                    <p>服务商直推：￥50</p>
+                    <p>服务商间推：￥50</p>
+                </div>
+            </div>
+            <div class="notice-bottom">
+                <h3>您当前身份：普通会员</h3>
+                <button>取消</button>
+                <button onclick="javascript:window.location.href='./quanyi.html'">点击查看</button>
+            </div>
+        </div>
+    </div>
+    <header>
+        <p>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            办信用卡
+        </p>
+    </header>
+    <div class="banka-banner">
+        <img src="./images/banka_banner.png" alt="">
+        <div class="banka-banner-row">
+            <div class="banka-banner-col" onclick="javascript:window.location.href='./bankaJindu.html'">进度查询</div>
+            <div class="banka-banner-col"  onclick="javascript:window.location.href='./bankaYongjin.html'">佣金查询</div>
+        </div>
+    </div>
+    <div class="banka-contain">
+        <div class="banka-contain-top">
+            <h2>免费办卡</h2>
+            <img src="./images/daedu.png" alt="">
+            <span>大额度</span>
+            <img src="./images/shenpikuai.png" alt="">
+            <span>审批快</span>
+            <img src="./images/yixiaka.png" alt="">
+            <span>易下卡</span>
+        </div>
+        <div class="banka-item">
+            <img src="./images/banka_demo.png" alt="">
+            <dt>交通银行</dt>
+            <dd>平均额度5w起，加油优惠，免息还款56天</dd>
+            <div class="banka-btn">
+                <button  onclick="showNotice();">奖金：122元<img src="./images/xiala.png" alt=""></button>
+                <a href="./bankaApply.html">点击办卡</a>
+            </div>
+        </div>
+        <div class="banka-item">
+            <img src="./images/banka_demo.png" alt="">
+            <dt>交通银行</dt>
+            <dd>平均额度5w起，加油优惠，免息还款56天</dd>
+            <div class="banka-btn">
+                <button>奖金：122元<img src="./images/xiala.png" alt=""></button>
+                <a href="#">点击办卡</a>
+            </div>
+        </div>
+        <div class="banka-item">
+            <img src="./images/banka_demo.png" alt="">
+            <dt>交通银行</dt>
+            <dd>平均额度5w起，加油优惠，免息还款56天</dd>
+            <div class="banka-btn">
+                <button>奖金：122元<img src="./images/xiala.png" alt=""></button>
+                <a href="#">点击办卡</a>
+            </div>
+        </div>
+        <div class="banka-item">
+            <img src="./images/banka_demo.png" alt="">
+            <dt>交通银行</dt>
+            <dd>平均额度5w起，加油优惠，免息还款56天</dd>
+            <div class="banka-btn">
+                <button>奖金：122元<img src="./images/xiala.png" alt=""></button>
+                <a href="#">点击办卡</a>
+            </div>
+        </div>
+    </div>
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        function closeNotice() {
+            $('#mask').hide();
+            $('#notice').hide();
+        }
+        function showNotice() {
+            $('#mask').show();
+            $('#notice').show();
+        }
+    </script>
+</body>
+
+</html>

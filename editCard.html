@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修改信用卡</title>
+    <link rel="stylesheet" href="./css/huankuan.css">
+</head>
+
+<body>
+    <h1 style="padding: .5rem 2.5rem .5rem .5rem;"><span onclick="javascript:history.go(-1);"></span>修改信用卡</h1>
+    <form action="" id="huankuan">
+        <div class="myForm">
+            <div class="row">
+                <label for="order_time">账单日</label>
+                <input type="number" id="order_time" name="order_time" placeholder="请输入账单日">
+            </div>
+            <div class="row">
+                <label for="paytime">还款日</label>
+                <input type="password" id="paytime" name="paytime" placeholder="请输入还款日">
+            </div>
+            <div class="row">
+                <label for="money">账单金额</label>
+                <input type="password" id="money" name="money" placeholder="请输入账单金额（选填）">
+            </div>
+            <div class="row">
+                <label for="limit">信用额度</label>
+                <input type="password" id="limit" name="limit" placeholder="请输入信用卡额度（选填）">
+            </div>
+        </div>
+        <div class="confirm">确定</div>
+    </form>
+    <script src="js/font.js"></script>
+</body>
+
+</html>

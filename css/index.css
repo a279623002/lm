@@ -1,0 +1,139 @@
+* {
+    font-family: Microsoft YaHei;
+}
+
+header {
+    width: 100%;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
+header img {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+nav {
+    background: #F5F5F5;
+    padding: 0 0 1rem 0;
+    margin-top: -15%;
+}
+
+.nav-row {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+    background: #FFF;
+    border-radius: .3rem;
+    box-shadow: 0 0 .5rem #e9e9e9;
+    position: relative;
+    z-index: 9;
+}
+
+nav .nav-row .nav-tips {
+    display: none;
+    position: absolute;
+    width: 50%;
+    text-align: center;
+    line-height: 2.5rem;
+    border-radius: .5rem;
+    height: 2.5rem;
+    background: rgb(51, 51, 51);
+    color: #FFF;
+    font-size: .7rem;
+    top: 100%;
+    left: 25%;
+    z-index: 9;
+}
+
+.nav-row .nav-cols {
+    width: 24%;
+}
+
+.nav-row .nav-cols img {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+}
+
+.nav-row .nav-cols p {
+    font-size: .8rem;
+    text-align: center;
+    margin: .5rem 0;
+}
+
+main {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+main h1 {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    font-weight: normal;
+    font-size: .8rem;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+main .main-items {
+    width: 90%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+main .main-items .main-cols {
+    width: 48%;
+    margin-bottom: 2.5rem;
+}
+
+main .main-items .main-cols img {
+    display: inline-block;
+    float: left;
+    width: 2rem;
+    margin-right: .5rem;
+}
+
+main .main-items .main-cols dt {
+    font-size: .8rem;
+}
+
+main .main-items .main-cols dd {
+    font-size: .8rem;
+}
+
+#mask {
+    display:none;
+    background:rgba(0,0,0,0.4);
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index: 9999;
+}
+
+#notice {
+    display:none;
+    width:80%;
+    position: fixed;;
+    left:10%;
+    bottom: 5rem;
+    z-index: 99999;
+}
+
+#notice img:first-child {
+    width: 100%;
+}    
+
+#notice img:last-child {
+    width: 15%;
+    display: block;
+    margin: 10% auto 0 auto;
+}    

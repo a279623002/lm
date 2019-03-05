@@ -1,0 +1,514 @@
+* {
+    font-family: Microsoft YaHei;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #F5F5F5;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    background: #FFF;
+    padding: .5rem;
+}
+
+header p {
+    font-size: .9rem;
+    height: 1.3rem;
+    text-align: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+header p span.back {
+    width: 1.3rem;
+    height: 1.3rem;
+    background: url(../images/back.png) no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    float: left;
+}
+
+header p span.add {
+    width: 1.3rem;
+    height: 1.3rem;
+    background: url(../images/add.png) no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    float: right;
+}
+
+main .item-wrap {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+main .item-wrap .item-content {
+    position: relative;
+    top: 0;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 10;
+    margin: .5rem;
+    padding: .5rem .9rem;
+    border: 1px solid #e5e5e5;
+    border-radius: .3rem;
+    box-shadow: 0 0 .5rem #e9e9e9;
+}
+
+main .item-wrap .item-content .item-top {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+main .item-wrap .item-content .item-top p {
+    width: 100%;
+    height: 3rem;
+    margin: 0 0 1.5rem 0;
+    line-height: 3rem;
+    padding: 0;
+    font-size: .8rem;
+    text-align: left;
+    color: #333333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+main .item-wrap .item-content .item-top p img {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.1rem;
+    float: left;
+    margin-right: .2rem;
+    margin-top: .95rem;
+}
+
+main .item-wrap .item-content .item-top p span {
+    display: inline-block;
+    color: #999999FF;
+    font-size: .7rem;
+    margin-left: .2rem;
+}
+
+main .item-wrap .item-content .item-top a.paynow {
+    display: inline-block;
+    float: right;
+    width: 5rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    border: 1px solid #369CFE;
+    border-radius: .2rem;
+    text-align: center;
+    text-decoration: none;
+    color: #369CFE;
+    font-size: .8rem;
+    margin-top: .85rem;
+}
+
+main .item-wrap .item-content .item-top a.paying {
+    display: inline-block;
+    float: right;
+    width: 5rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    border: 1px solid #FE764B;
+    border-radius: .2rem;
+    text-align: center;
+    text-decoration: none;
+    color: #FE764B;
+    font-size: .8rem;
+    margin-top: .85rem;
+}
+
+main .item-wrap .item-content .item-bottom {
+    width: 100%;
+    margin: 0 auto 1rem auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .item-wrap .item-content .item-bottom .item-cols {
+    width: 33%;
+    border-right: 1px solid #e5e5e5;
+}
+
+main .item-wrap .item-content .item-bottom .item-cols dt {
+    color: #666666;
+    font-size: .8rem;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+main .item-wrap .item-content .item-bottom .item-cols dd {
+    color: #666666;
+    font-size: .8rem;
+    margin: 0;
+}
+
+.clear-border {
+    border: none !important;
+}
+
+main .item-wrap .item-btn {
+    /* 删除按钮位于条目内容的下一层 */
+    position: absolute;
+    top: 30%;
+    right: 0;
+    width: 40%;
+    color: #fff;
+    z-index: 9;
+    overflow: hidden;
+}
+
+main .item-wrap .item-btn img {
+    width: 1.2rem;
+    height: 1.4rem;
+    display: block;
+    margin: 0 auto;
+}
+
+main .item-wrap .item-btn p {
+    display: block;
+    width: 3rem;
+    height: 1.2rem;
+    line-height: 1.3rem;
+    border-radius: .2rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: .7rem;
+    margin: .5rem auto 0 auto;
+}
+
+main .item-wrap .item-btn .edit {
+    float: left;
+    width: 48%;
+    border-right: 1px solid #e5e5e5;
+    margin-right: 1%;
+}
+
+main .item-wrap .item-btn .edit p {
+    color: #F6B700;
+    border: 1px solid #F6B700;
+}
+
+main .item-wrap .item-btn .unbind {
+    float: left;
+    width: 48%;
+}
+
+main .item-wrap .item-btn .unbind p {
+    color: #F45600;
+    border: 1px solid #F45600;
+}
+
+main .add-card {
+    width: 80%;
+    margin: 2rem auto;
+    height: 2.3rem;
+    line-height: 2.3rem;
+    background: #369CFE;
+    color: #FFF;
+    font-size: .9rem;
+    text-align: center;
+    border-radius: .3rem;
+}
+
+/* 添加信用卡 开始 */
+
+h1 {
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+    font-size: .9rem;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    background: #FFF;
+    padding: .5rem 2.5rem .5rem .5rem;
+}
+
+h1 span {
+    width: 1.3rem;
+    height: 1.3rem;
+    background: url(../images/back.png) no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    margin-top: .2rem;
+    float: left;
+}
+
+form {
+    border-top: .2rem solid #F5F5F5;
+}
+
+form .row {
+    height: 1.1rem;
+    border-bottom: 1px solid #F5F5F5;
+    overflow: hidden;
+    padding: 1rem 0.5rem;
+}
+
+form .row:nth-child(4) {
+    border: none;
+}
+
+form .row:nth-child(5) {
+    border-bottom: .2rem solid #F5F5F5;
+}
+
+form .row label {
+    display: inline-block;
+    float: left;
+    font-size: 0.8rem;
+    height: 1.1rem;
+    width: 25%;
+    color: #666666;
+}
+
+form .row input {
+    float: left;
+    width: 60%;
+    height: 1.1rem;
+    padding: 0;
+    border: none;
+    float: left;
+    font-size: 0.8rem;
+    color: #fff;
+    background: none;
+}
+
+form .row img {
+    height: 1.1rem;
+    display: inline-block;
+    float: right;
+}
+
+form .submit {
+    width: 80%;
+    height: 2.2rem;
+    margin: 1rem auto;
+    background: #4194FE;
+    font-size: 1rem;
+    line-height: 2.2rem;
+    text-align: center;
+    border-radius: .2rem;
+    color: #FFF;
+    cursor: pointer;
+}
+
+#mask {
+    display:none;
+    background:rgba(0,0,0,0.4);
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index: 9999;
+}
+
+#help {
+    display:none;
+    width:80%;
+    position:absolute;
+    left:10%;
+    top:30%;
+    z-index: 99999;
+}
+
+#help img:first-child {
+    width: 100%;
+}    
+
+#help .closehelp {
+    width: 2rem;
+    height: 2rem;
+    background: #FFF;
+    border-radius: 2rem;
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#help .closehelp img {
+    display: inline-block;
+    width: .8rem;
+    height: .8rem;
+    margin: .6rem auto;
+}
+
+#codeBox {
+    display:none;
+    width:80%;
+    position:absolute;
+    left:10%;
+    top:40%;
+    z-index: 99999;
+    background: #FFF;
+    border-radius: .2rem;
+    overflow: hidden;
+}
+
+#codeBox .row {
+    height: 1.3rem;
+    margin: .5rem 0;
+    overflow: hidden;
+}
+
+#codeBox h2 {
+    font-size: .9rem;
+    font-weight: normal;
+    margin: 1rem .5rem .5rem .5rem;
+    text-align: center;
+    color: #333333;
+}
+
+#codeBox .row p {
+    width: 6.5rem;
+    height: 1.3rem;
+    font-size: .8rem;
+    background: #DFDFDF;
+    border-radius: 1.3rem;
+    line-height: 1.3rem;
+    color: #FFF;
+    text-align: center;
+    float: right;
+    margin: 0 .5rem 0 0;
+}
+
+#codeBox .row input {
+    height: 1.3rem;
+    font-size: .8rem;
+    line-height: 1.3rem;
+    border: none;
+    margin-left: .5rem;
+    width: 8rem;
+    float: left;
+}
+
+#codeBox .row span {
+    display: inline-block;
+    width: 6.5rem;
+    height: 1.3rem;
+    font-size: .8rem;
+    background: #4194FE;
+    border-radius: 1.3rem;
+    line-height: 1.3rem;
+    color: #FFF;
+    text-align: center;
+    float: right;
+    margin: 0 .5rem 0 0;
+}
+
+#codeBox .row:nth-child(3) {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 0;
+}
+
+#codeBox .row:last-child {
+    margin: 0;
+    height: 2.5rem;
+}
+
+#codeBox .row button {
+    width: 50%;
+    float: left;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    height: 2.5rem;
+    font-size: .8rem;
+}
+
+#codeBox .row button:first-child {
+    background: #FFF;
+    color: #333333;
+}
+
+#codeBox .row button:last-child {
+    background: #4194FE;
+    color: #FFF;
+}
+/* 添加信用卡 结束 */
+
+
+/* 编辑信用卡 开始 */
+
+form#huankuan .myForm {
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    background: #FFF;
+}
+
+form#huankuan .myForm .row {
+    width: 100%;
+    height: 2rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0 0 0 !important;
+}
+
+form#huankuan .myForm .row label {
+    display: inline-block;
+    float: left;
+    font-size: 0.9rem;
+    height: 1.4rem;
+    width: 25%;
+    color: #666666;
+}
+
+form#huankuan .myForm .row input {
+    float: left;
+    width: 75%;
+    height: 1.4rem;
+    padding: 0;
+    border: none;
+    float: left;
+    font-size: 0.9rem;
+    color: #fff;
+    background: none;
+}
+
+form#huankuan .myForm .row .code {
+    float: right;
+    width: 30%;
+    max-width: 5.5rem;
+    margin-top: -0.5rem;
+    padding: 0.5rem 0;
+    display: inline-block;
+    border-radius: 0.5rem;
+    background: #93BDF5FF;
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+form#huankuan .confirm {
+    width: 80%;
+    height: 2.3rem;
+    margin: 2rem auto 0 auto;
+    background: #4194FE;
+    font-size: 1rem;
+    line-height: 2.3rem;
+    text-align: center;
+    border-radius: .3rem;
+    color: #FFF;
+    cursor: pointer;
+}
+/* 编辑信用卡 结束 */
+

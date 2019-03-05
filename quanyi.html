@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>会员权益</title>
+    <link rel="stylesheet" href="./css/quanyi.css">
+</head>
+
+<body>
+    <div id="mask"></div>
+    <div id="pay">
+        <h2>支付方式</h2>
+        <div class="pay-row">
+            <img src="./images/alipay_logo.png" alt="">
+        </div>
+        <div class="pay-row">
+            <img src="./images/wechat_logo.png" alt="">
+        </div>
+        <div class="pay-cancel" onclick="javascript:colsePay();">取消</div>
+    </div>
+    <header>
+        <img src="./images/quanyi_banner.png" alt="">
+        <p>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            升级奖励·分享奖励·还款分期
+        </p>
+        <a href="#"></a>
+    </header>
+    <main>
+        <div class="main-head">
+            <img src="./images/grade_02.png" alt="">
+            当前等级
+            <span onclick="javascript:window.location.href='./quanyiInfo.html'">查看更多权益</span>
+        </div>
+        <div class="main-row">
+            <div class="main-col">
+                <img src="./images/grade_03.png" alt="">
+            </div>
+            <div class="main-col">
+                <p>1、还款手续费低至0.48%</p>
+                <p>2、每推荐一位好友最高奖励178.8元</p>
+                <p>3、好友使用享最高14.4元/万</p>
+                <p>4、间推好友享受额外奖励</p>
+                <a href="./quanyiInfo.html">查看更多权益>></a>
+            </div>
+            <div class="main-col">
+                <span>￥298</span>
+                <a href="javascript:void(0);" onclick="showPay();">立即升级</a>
+            </div>
+        </div>
+        <div class="main-row">
+            <div class="main-col">
+                <img src="./images/grade_02.png" alt="">
+            </div>
+            <div class="main-col">
+                <p>1、还款手续费低至0.55%+1元</p>
+                <p>2、收银手续费低至0.55%+2元</p>
+                <p>3、邀请5名好友注册实名免费升级</p>
+            </div>
+            <div class="main-col">
+                <a href="#" class="up_grade">已升级</a>
+            </div>
+        </div>
+        <div class="main-row">
+            <div class="main-col">
+                <img src="./images/grade_01.png" alt="">
+            </div>
+            <div class="main-col">
+                <p>1、还款手续费低至0.65%+1元</p>
+                <p>2、收银手续费低至0.58%+2元</p>
+            </div>
+            <div class="main-col">
+                <a href="#" class="up_grade">已升级</a>
+            </div>
+        </div>
+    </main>
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        function showPay() {
+            $('#mask').show();
+            $('#pay').show();
+        }
+        function colsePay() {
+            $('#mask').hide();
+            $('#pay').hide();
+        }
+    </script>
+</body>
+
+</html>

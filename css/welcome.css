@@ -1,0 +1,118 @@
+* {
+    font-family: Microsoft YaHei;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #FFF;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: .8rem;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide .info {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.swiper-slide .info img {
+    width: 18rem;
+    display: block;
+    margin: 2rem auto 1rem auto;
+}
+
+.swiper-slide .info h1 {
+    color: #666666;
+    font-weight: normal;
+    font-size: 1rem;
+    margin: 0 0 .5rem 0;
+}
+
+.swiper-slide .info p {
+    color: #999999;
+    font-size: .8rem;
+    margin: .2rem 0;
+}
+
+.swiper-slide .start {
+    position: absolute;
+    width: 100%;
+    bottom: 1.5rem;
+    left: 0;
+}
+
+.swiper-slide .start a {
+    display: inline-block;
+    text-decoration: none;
+    background: #939afd;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    width: 10rem;
+    margin: 0 auto;
+    border-radius: 2.5rem;
+    color: #FFF;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.swiper-pagination {
+    z-index: 0;
+}
+
+.swiper-pagination-bullet-active {
+    background: #7d7d7d !important;
+    opacity: 1;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 2rem;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 0.5rem;
+}
+
+.swiper-pagination-bullet {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: #FFF;
+    border: 0.1rem solid #7d7d7d;
+}

@@ -1,0 +1,355 @@
+#mask {
+    display: none;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: calc(100% - 10rem);
+    top: 10rem;
+    position: fixed;
+    z-index: 9;
+}
+
+body {
+    background: #F5F5F5;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    background: #FFF;
+    padding: .5rem;
+}
+
+header p {
+    font-size: .9rem;
+    height: 1.3rem;
+    text-align: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+header p span.back {
+    width: 1.3rem;
+    height: 1.3rem;
+    background: url(../images/back.png) no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    float: left;
+}
+
+header p span.add {
+    width: 1.3rem;
+    height: 1.3rem;
+    background: url(../images/add_black.png) no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    float: right;
+}
+
+.nav-select {
+    height: 2.3rem;
+    border-top: 1px solid #E5E4E3;
+    border-bottom: 1px solid #E5E4E3;
+    background: #FFF;
+    position: relative;
+}
+
+.select-box01 {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    background: #FFF;
+    top: 2.3rem;
+    z-index: 99;
+}
+
+.select-box01 p {
+    margin: 1rem .5rem;
+    color: #333333;
+    font-size: .7rem;
+    text-align: left;
+}
+
+.select-box01 .box-nav {
+    margin: 0 .5rem 1rem .5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.select-box01 .box-nav button {
+    width: 4rem;
+    height: 1.7rem;
+    background: #f0f0f0;
+    font-size: .7rem;
+    color: #333333;
+    border: none;
+    border-radius: 1.7rem;
+}
+
+.select-box01 .box-nav button.select-active {
+    border: 1px solid #369CFE;
+    background: none;
+    color: #369CFE;
+}
+
+.select-box01 .input-row {
+    height: 1rem;
+    margin: 1rem .5rem;
+}
+
+.select-box01 .input-row label {
+    font-size: .7rem;
+    color: #333333;
+}
+
+.select-box01 .input-row input {
+    width: 65%;
+    margin-left: 5%;
+    font-size: .7rem;
+    color: #333333;
+    border: none;
+    background: url(../images/down_gray.png) no-repeat right 1rem center;
+    background-size: .7rem;
+}
+
+.select-box01 .box-btn {
+    height: 2.3rem;
+    background: #FFF;
+    margin-top: 1rem;
+}
+
+.select-box01 .box-btn .btn-col {
+    width: 49%;
+    float: left;
+    height: 2.3rem;
+    line-height: 2.3rem;
+    background-size: .5rem;
+    text-align: center;
+    font-size: .7rem;
+    color: #333333;
+}
+
+.select-box01 .box-btn .btn-col:last-child {
+    color: #FFF;
+    background: #369CFE;
+    float: right;
+}
+
+.select-box02 {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    background: #FFF;
+    top: 2.3rem;
+    z-index: 99;
+    padding-bottom: 1rem;
+}
+
+.select-box02 button {
+    width: 5rem;
+    height: 1.7rem;
+    background: #f0f0f0;
+    font-size: .7rem;
+    color: #333333;
+    border: none;
+    border-radius: 1.7rem;
+    margin: 1rem 0 0 1rem;
+}
+
+.select-box02 button.select-active {
+    border: 1px solid #369CFE;
+    background: none;
+    color: #369CFE;
+}
+
+.nav-select .select-col {
+    width: 49%;
+    float: left;
+    height: 2.3rem;
+    line-height: 2.3rem;
+    background: url(../images/select.png) no-repeat right 2rem center;
+    background-size: .5rem;
+    text-align: center;
+    font-size: .7rem;
+    color: #333333;
+}
+
+.nav-select .select-col:first-child {
+    border-right: 1px solid #E5E4E3;
+}
+
+.fws-row {
+    margin: 1rem;
+}
+
+.fws-row p {
+    font-size: .7rem;
+    color: #333333;
+    text-align: left;
+    margin: .5rem 0;
+    padding-left: .5rem;
+    background: url(../images/row_bg.png) no-repeat left center;
+    background-size: contain;
+}
+
+.fws-row .fws-box {
+    margin: .5rem auto;
+    display: flex;
+    justify-content: space-around;
+    background: #FFF;
+    padding: 1rem 2rem;
+    border-radius: 5pt;
+}
+
+.fws-row .fws-box .fws-col {
+    width: 33%;
+    text-align: center;
+}
+
+.fws-row .fws-box .fws-col:first-child {
+    text-align: left;
+}
+
+.fws-row .fws-box .fws-col:last-child {
+    text-align: right;
+}
+
+.fws-row .fws-box .fws-col dt {
+    font-size: .7rem;
+    color: #333333;
+}
+
+.fws-row .fws-box .fws-col dd {
+    font-size: .7rem;
+    color: #333333;
+    margin: .5rem 0 0 0;
+}
+
+.fws-row .fws-box .fws-col dd span {
+    color: #EAB102;
+}
+
+.getDateBox .choiceDateTitle button {
+    color: #369CFE !important;
+}
+
+.getDateBox .choiceDateTitle button#dateCancel {
+    color: #333333 !important;
+}
+
+.getDateBox .choiceDateTitle {
+    background-color: #FFF;
+    border-bottom: 1px solid #E5E4E3;
+}
+
+/* 新增团队 开始 */
+form#fwsAdd {
+    padding: 0;
+    margin: 1rem 0;
+}
+
+form#fwsAdd .add-row {
+    padding: 0 1rem;
+    height: 3rem;
+    line-height: 3rem;
+    border-bottom: 1px solid rgb(220, 220, 220, .5); 
+    color: #666666;
+    font-size: .75rem;
+    background: #FFF;
+}
+
+form#fwsAdd .add-row:last-child {
+    border: none;
+}
+
+form#fwsAdd .add-row label {
+    display: inline-block;
+    width: 3.3rem;
+    text-align: justify;
+    text-align-last: justify;
+    margin-right: 1rem;
+}
+
+form#fwsAdd .add-row input {
+    border: none;
+}
+
+form#fwsAdd button {
+    border: none;
+    background: #4194fe;
+    height: 2.5rem;
+    display: block;
+    width: 15rem;
+    margin: 2rem auto;
+    text-align: center;
+    font-size: .85rem;
+    color: #FFF; 
+    border-radius: .3rem;
+}
+
+.footer-tip {
+    position: fixed;
+    bottom: 3rem;
+    width: 100%;
+}
+
+.footer-tip p {
+    width: 10rem;
+    font-size: .7rem;
+    color: #666666;
+    text-align: center;
+    margin: .5rem auto;
+}
+
+#newmask {
+    display:none;
+    background:rgba(0,0,0,0.4);
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index: 9999;
+}
+
+.notice {
+    display:none;
+    width:70%;
+    position:absolute;
+    left:15%;
+    top:80%;
+    z-index: 99999;
+    background: #FFF;
+    border-radius: .3rem;
+}
+
+.notice h2 {
+    margin: 2rem 0 0 1rem;
+    text-align: center;
+    font-size: .9rem;
+    color: #333333;
+    font-weight: normal;
+}
+
+.notice p {
+    text-align: center;
+    font-size: .7rem;
+    color: #999999;
+    margin: .5rem 0 0 0;
+}
+
+.notice a {
+    display: block;
+    text-decoration: none;
+    background: #4194fe;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    display: block;
+    width: 8rem;
+    margin: 1rem auto 2rem auto;
+    text-align: center;
+    font-size: .85rem;
+    color: #FFF; 
+    border-radius: 2.5rem;
+}
+/* 新增团队 结束 */

@@ -1,0 +1,818 @@
+* {
+    font-family: Microsoft YaHei;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    background: #FFF;
+    padding: .5rem 2.5rem .5rem .5rem;
+}
+
+header p {
+    font-size: .9rem;
+    height: 1.3rem;
+    text-align: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+header p span.back {
+    width: 1.3rem;
+    height: 1.3rem;
+    background: url(../images/back.png) no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    float: left;
+}
+
+.banka-banner {
+    width: 19rem;
+    margin: 0 auto;
+    padding: .5rem;
+    height: 8.5rem;
+    background: #F5F5F5;
+    position: relative;
+}
+
+.banka-banner img {
+    width: 19rem;
+    height: 8.5rem;
+}
+
+.banka-banner .banka-banner-row {
+    width: 19rem;
+    position: absolute;
+    bottom: 1rem;
+    height: 1.3rem;
+}
+
+.banka-banner .banka-banner-row .banka-banner-col {
+    width: 7rem;
+    float: left;
+    padding-left: 1rem;
+    height: 1.9rem;
+    line-height: 1.9rem;
+    text-align: left;
+    font-size: .7rem;
+    color: #333333;
+    background: url(../images/arrow_right.png) no-repeat right center;
+    background-size: 1rem;
+}
+
+.banka-banner .banka-banner-row .banka-banner-col:last-child {
+    float: right;
+}
+
+.banka-contain {
+    width: 20rem;
+    margin: 0 auto 2rem auto;
+    padding-bottom: 1rem;
+    overflow: hidden;
+}
+
+.banka-contain .banka-contain-top {
+    overflow: hidden;
+    height: 2rem;
+    width: 19rem;
+    margin: 0 auto;
+}
+
+.banka-contain .banka-contain-top h2 {
+    font-size: .8rem;
+    font-weight: normal;
+    color: #333333;
+    text-align: left;
+    margin: 0;
+    float: left;
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.banka-contain .banka-contain-top img {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin: .5rem .25rem 0 .5rem;
+    float: left;
+}
+
+.banka-contain .banka-contain-top span {
+    font-size: .6rem;
+    color: #999999;
+    float: left;
+    display: inline-block;
+    margin-top: .6rem;
+}
+
+.banka-contain .banka-item {
+    width: 8.8rem;
+    margin: .5rem 0 0 .2rem;
+    box-shadow: 0 0 .5rem #e9e9e9;
+    float: left;
+    padding: .5rem;
+}
+
+.banka-contain .banka-item:nth-of-type(odd) {
+    float: right !important;
+    margin: .5rem .2rem 0 0 !important;
+}
+
+.banka-contain .banka-item img {
+    width: 7.5rem;
+    display: block;
+    margin: .5rem auto;
+}
+
+.banka-contain .banka-item dt {
+    color: #333333;
+    font-size: .7rem;
+    width: 8.8rem;
+    text-align: left;
+}
+
+.banka-contain .banka-item dd {
+    color: #999999;
+    font-size: .6rem;
+    width: 8.8rem;
+    margin: .2rem auto;
+}
+
+.banka-contain .banka-item .banka-btn {
+    width: 8.8rem;
+    margin: 0 auto;
+    padding: .5rem 0;
+    border-top: 1px solid rgb(233, 233, 233, .5);
+    overflow: hidden;
+    box-shadow: none;
+}
+
+.banka-contain .banka-item .banka-btn button {
+    width: 4.5rem;
+    height: 1.2rem;
+    background: #FFF;
+    color: #F6B700;
+    border: 1px solid #F6B700;
+    border-radius: .3rem;
+    font-size: .6rem;
+    text-align: center;
+    float: left;
+    padding: 0;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.banka-contain .banka-item .banka-btn button img {
+    width: .5rem;
+    height: .5rem;
+    margin: .2rem .2rem 0 0;
+    display: inline-block;
+    float: right;
+}
+
+.banka-contain .banka-item .banka-btn a {
+    width: 4rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    color: #FFF;
+    background: #06BCC9;
+    border-radius: .3rem;
+    font-size: .6rem;
+    text-align: center;
+    float: right;
+    text-decoration: none;
+}
+
+
+#mask {
+    display: none;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+}
+
+#notice {
+    display: none;
+    width: 80%;
+    position: fixed;
+    left: 10%;
+    top: 25%;
+    z-index: 99999;
+}
+
+#notice img.close {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+    float: right;
+}
+
+#notice .notice-box {
+    width: 100%;
+    background: #FFF;
+    margin-top: 2.5rem;
+    border-radius: .3rem;
+    overflow: hidden;
+}
+
+#notice .notice-box .notice-top {
+    background: #07C2C9;
+}
+
+#notice .notice-box .notice-top .notice-center {
+    overflow: hidden;
+    width: 20rem;
+    margin: 0 auto;
+}
+
+#notice .notice-box .notice-top .notice-center img {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    float: left;
+    margin: .5rem .5rem 0 3rem;
+}
+
+#notice .notice-box .notice-top .notice-center h2 {
+    margin: 0 auto;
+    padding: 0;
+    font-weight: normal;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: .8rem;
+    text-align: center;
+    color: #FFFFFF;
+    float: left;
+}
+
+#notice .notice-box .notice-contain {
+    margin: .5rem auto;
+    overflow: hidden;
+}
+
+#notice .notice-box .notice-contain .notice-col {
+    width: 48%;
+    float: left;
+    margin: 0 1% 0 0;
+}
+
+#notice .notice-box .notice-contain .notice-col:first-child {
+    border-right: 1px solid #E5E5E5;
+}
+
+#notice .notice-box .notice-contain .notice-col p {
+    color: #333333;
+    font-size: .7rem;
+    text-align: center;
+    margin: .5rem auto;
+}
+
+#notice .notice-box .notice-bottom {
+    border-top: 1px solid #E5E5E5;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+#notice .notice-box .notice-bottom h3 {
+    color: #333333;
+    margin: .5rem auto;
+    text-align: center;
+    font-size: .7rem;
+    font-weight: normal;
+}
+
+#notice .notice-box .notice-bottom button {
+    height: 1.5rem;
+    font-size: .7rem;
+    text-align: center;
+    width: 40%;
+    float: left;
+    margin: 0 2% 0 5%;
+    border: 1px solid #E5E5E5;
+    border-radius: .3rem;
+    background: none;
+}
+
+#notice .notice-box .notice-bottom button:last-child {
+    background: #07C2C9;
+    color: #FFF;
+    border: none;
+}
+
+/* 办卡进度 开始 */
+.jindu-row {
+    width: 18rem;
+    height: 3.5rem;
+    margin: 1rem auto;
+    background: #FFF;
+}
+
+.jindu-row .jindu-row-bg {
+    width: .2rem;
+    height: 3.5rem;
+    background: #07C2C9;
+    float: left;
+}
+
+.jindu-row img {
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    float: left;
+    margin: .75rem .5rem;
+}
+
+.jindu-row .contain-left {
+    width: 10rem;
+    height: 3.5rem;
+    float: left;
+}
+
+.jindu-row .contain-left dt {
+    font-size: .85rem;
+    color: #333333;
+    text-align: left;
+    margin-top: .5rem;
+}
+
+.jindu-row .contain-left dd {
+    font-size: .6rem;
+    color: #999999;
+    text-align: left;
+    margin: .3rem 0 0 0;
+}
+
+.jindu-row a {
+    display: inline-block;
+    float: right;
+    font-size: .8rem;
+    color: #333333;
+    text-decoration: none;
+    margin: 1.25rem 1rem 0 0;
+}
+/* 办卡进度 结束 */
+
+/* 佣金查询 开始 */
+table {
+    border-collapse: collapse;
+    width: 18rem;
+    margin: 0 auto;
+}
+
+table,tr,td {
+    border: 1px solid #DCDCDC;
+}
+
+td {
+    width: 2rem;
+    /*这里需要自己调整，根据自己的需求调整宽度*/
+    height: 1rem;
+    /*这里需要自己调整，根据自己的需求调整高度*/
+    position: relative;
+    font-size: .6rem;
+    color: #333333;
+    text-align: center;
+    padding: .5rem .2rem;
+}
+
+td[class=first]:before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 3.8rem;
+    /*这里需要自己调整，根据td的宽度和高度*/
+    top: 0;
+    left: 0;
+    background-color: #DCDCDC;
+    display: block;
+    transform: rotate(-49deg);
+    /*这里需要自己调整，根据线的位置*/
+    transform-origin: top;
+}
+
+td span {
+    font-size: .6rem;
+    color: #FFF;
+    display: inline-block;
+    position: absolute;
+}
+
+td span:first-child {
+    top: .3rem;
+    right: .3rem;
+}
+
+td span:last-child {
+    bottom: .3rem;
+    left: .3rem;
+}
+
+tr:first-child {
+    background: #07C2C9;
+}
+
+td img {
+    width: 1rem;
+    height: 1rem;
+    display: block;
+    margin: 0 auto;
+}
+
+tr:first-child td {
+    color: #FFF;
+}
+
+.tip-row {
+    width: 18rem;
+    margin: 1rem auto .5rem auto;
+}
+
+.tip-row h2 {
+    text-align: left;
+    font-weight: normal;
+    font-size: .7rem;
+    color: #07C2C9;
+    margin: .5rem 0 .2rem 0;
+}
+
+.tip-row span {
+    display: inline-block;
+    padding: 0 0 0 .5rem;
+    font-size: .7rem;
+    background: #07C2C9;
+    color: #FFF;
+    margin: .5rem 0 .2rem 0;
+    border-radius: .5rem;
+}
+
+.tip-row p {
+    text-align: left;
+    font-size: .6rem;
+    color: #666666;
+    margin: 0;
+}
+
+.notice {
+    width: 20rem;
+    margin: 0 auto;
+    background: #F5F5F5;
+    padding-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.notice h2 {
+    width: 15rem;
+    margin: 0 auto;
+    font-size: .8rem;
+    text-align: center;
+    color: #01B5BC;
+    font-weight: normal;
+}
+
+.notice p i {
+    font-size: .8rem;
+}
+
+.notice p {
+    width: 15rem;
+    margin: 1rem auto;
+    font-size: .6rem;
+    color: #01B5BC;
+    font-weight: normal;
+    text-align: left;
+}
+
+.notice .boxTl {
+    position: absolute;
+    width: .6rem;
+    height: .6rem;
+    background: #07C2C9;
+    top: 1.6rem;
+    left: 3rem;
+    opacity: .5;
+}
+
+.notice .boxTr {
+    position: absolute;
+    width: .6rem;
+    height: .6rem;
+    background: #07C2C9;
+    top: 1.6rem;
+    right: 3rem;
+    opacity: .5;
+}
+
+.notice .boxBr {
+    position: absolute;
+    width: .3rem;
+    height: .3rem;
+    background: #07C2C9;
+    top: 2rem;
+    right: 2.5rem;
+    opacity: .3;
+}
+
+.notice .boxBL {
+    position: absolute;
+    width: .3rem;
+    height: .3rem;
+    background: #07C2C9;
+    top: 2rem;
+    left: 2.5rem;
+    opacity: .3;
+}
+/* 佣金查询 结束 */
+
+/* 办卡-申请 开始 */
+.head-img {
+    width: 100%;
+    position: relative;
+}
+
+.head-img img {
+    width: 100%;
+}
+
+.head-img a {
+    width: 25%;
+    height: 13%;
+    display: block;
+    position: absolute;
+    z-index: 99;
+    right: 6%;
+    top: 58%;
+}
+
+form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+form .row {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: .75rem;
+    padding: 0 .5rem;
+    color: #333333;
+    background: #FFF;
+    overflow: hidden;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+form .row img {
+    height: 1.5rem;
+    width: 1.5rem;
+    display: inline-block;
+    float: left;
+    margin: .5rem .5rem 0 0;
+}
+
+form .row label {
+    width: 5rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    float: left;
+}
+
+form .row input {
+    border: none;
+    font-size: .7rem;
+    float: left;
+    width: 7.5rem;
+    height: 1rem;
+    margin: .75rem 0 0 0;
+}
+
+form .row a {
+    text-decoration: none;
+    font-size: .7rem;
+    float: right;
+    width: 5rem;
+    background: #07c2c9;
+    color: #FFF;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin: .5rem 0 0 0;
+    border-radius: 1.5rem;
+    text-align: center;
+}
+
+form p.tips {
+    width: 18rem;
+    margin: 1rem auto;
+    font-size: .65rem;
+    color: #676767;
+    text-align: left;
+}
+
+form .next-btn {
+    width: 16rem;
+    margin: 2rem auto;
+    background: #07c2c9;
+    font-size: .8rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #FFF;
+    border-radius: .1rem;
+}
+
+#confirm {
+    display: none;
+    width: 90%;
+    position: fixed;
+    left: 5%;
+    top: 25%;
+    z-index: 99999;
+    background: #FFF;
+    border-radius: .3rem;
+}
+
+#confirm h2 {
+    font-size: .6rem;
+    color: #666666;
+    font-weight: normal;
+    text-align: center;
+    margin: 1rem auto;
+    width: 16rem;
+}
+
+#confirm .confirm-contain {
+    border-top: 1px solid #C8C8C8;
+    border-bottom: 1px solid #C8C8C8;
+    padding: 0 1rem;
+}
+
+#confirm .confirm-contain p {
+    margin: .5rem 0;
+    color: #999999;
+    font-size: .85rem;
+    text-align: left;
+    height: 2rem;
+    line-height: 2rem;
+}
+
+#confirm .confirm-contain img {
+    height: 1.5rem;
+    width: 1.5rem;
+    display: inline-block;
+    float: left;
+    margin: .25rem .5rem 0 0;
+}
+
+#confirm a {
+    width: 48%;
+    margin: 0 1% 0 0;
+    height: 3rem;
+    line-height: 3rem;
+    text-decoration: none;
+    color: #07c2c9;
+    font-size: .9rem;
+    text-align: center;
+    display: inline-block;
+    float: left;
+}
+
+#confirm a:first-child {
+    border-right: 1px solid #C8C8C8;
+}
+/* 办卡-申请 结束 */
+/* 办卡-分享 开始 */
+header p a {
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    float: right;
+}
+
+header p a img {
+    width: 1rem;
+    height: 1rem;
+    margin-top: .2rem;
+}
+
+.share-top {
+    height: 15rem;
+    background: #07C2C9;
+}
+
+.share-top p {
+    margin: 0 auto;
+    padding-top: 3rem;
+    color: #FFF;
+    width: 18rem;
+    text-align: left;
+    font-size: #FFF;
+    font-size: .8rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.share-top p a {
+    display: inline-block;
+    font-size: .7rem;
+    float: right;
+    width: 5rem;
+    height: 1.5rem;
+    text-decoration: none;
+    background: #F6B700;
+    border-radius: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    color: #FFF;
+}
+
+.share-top .share-url {
+    width: 18rem;
+    margin: 1rem auto;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: .2rem;
+    font-size: .7rem;
+    text-indent: .2rem;
+    background: #FFF;
+    color: #999999;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.share-bottom {
+    margin-top: -5rem;
+}
+
+.share-bottom img {
+    width: 10rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.share-bottom p {
+    font-size: .7rem;
+    color: #656565FF;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.share-bottom button {
+    width: 16rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: .3rem;
+    border: 0;
+    background: #F6B700;
+    font-size: .85rem;
+    color: #FFF;
+    display: block;
+    margin: 2rem auto;
+}
+
+#share {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #FFF;
+    min-height: 10rem;
+    z-index: 9999;
+    padding-bottom: 3rem;
+}
+
+#share h2 {
+    text-align: center;
+    color: #333333;
+    font-size: .85rem;
+    font-weight: normal;
+    margin: 2rem auto;
+}
+
+#share .share-row {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#share .share-row .share-col {
+    width: 30%;
+    text-align: center;
+    font-size: .85rem;
+    color: #333333;
+}
+
+#share .share-row .share-col img {
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+/* 办卡-分享 结束 */

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>系统消息</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/user.css">
+    <style>
+        body {
+            background: #F5F5F5;
+        }
+
+        h1 {
+            padding: .5rem;
+        }
+
+        h1 span {
+            margin-right: 2rem;
+        }
+
+        h1 a {
+            display: inline-block;
+            text-decoration: none;
+            color: #333333FF;
+            float: right;
+        }
+
+        h1 a.read {
+            color: #CCCCCC !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h1><span onclick="javascript:history.go(-1);"></span>系统消息<a href="#" class="read">全部已读</a></h1> -->
+    <h1><span onclick="javascript:history.go(-1);"></span>系统消息<a href="#">全部已读</a></h1>
+    <div class="msg-box">
+        <div class="msg-time"><span>今天 17:00</span></div>
+        <div class="msg-content">
+            <div class="msg-title">
+                <h3>还款提醒</h3>
+                <span></span>
+            </div>
+            <p>
+                尊敬的会员：您的尾号9763（广发银行）信用卡账
+                单已出，请及时查看定制还款计划
+            </p>
+        </div>
+    </div>
+    <div class="msg-box">
+        <div class="msg-time"><span>今天 17:00</span></div>
+        <div class="msg-content">
+            <div class="msg-title">
+                <h3>还款成功提醒</h3>
+                <span></span>
+            </div>
+            <p>
+                尊敬的各位龙猫用户，为保证服务质量，服务器进
+                行例行的维护工作。实名认证和添加银行卡 将于9
+                月14日-9月20日期间，晚上8点至次日早上8点，
+                进行维护，期间暂不支持使用。
+            </p>
+        </div>
+        <div class="msg-content">
+            <div class="msg-title">
+                <h3>还款成功提醒</h3>
+                <span></span>
+                <a href="#">点击查看 ></a>
+            </div>
+            <p>
+                尊敬的各位龙猫用户，为保证服务质量，服务器进
+                行例行的维护工作。实名认证和添加银行卡 将于9
+                月14日-9月20日期间，晚上8点至次日早上8点，
+                进行维护，期间暂不支持使用。
+            </p>
+        </div>
+    </div>
+    <script src="js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+</body>
+
+</html>

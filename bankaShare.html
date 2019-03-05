@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>办信用卡-分享</title>
+    <link rel="stylesheet" href="./css/banka.css">
+    <style>
+        header {
+            padding: .5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mask" onclick="closeShare();"></div>
+    <div id="share">
+        <h2>分享到</h2>
+        <div class="share-row">
+            <div class="share-col">
+                <img src="./images/banka_weixin.png" alt="">
+                微信好友
+            </div>
+            <div class="share-col">
+                <img src="./images/banka_pyq.png" alt="">
+                微信朋友圈
+            </div>
+            <div class="share-col">
+                <img src="./images/banka_save.png" alt="">
+                保存本地
+            </div>
+        </div>
+    </div>
+    <header>
+        <p>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            分享
+            <a href="javascript:void(0);" onclick="showShare();"><img src="./images/share_logo.png" alt=""></a>
+        </p>
+    </header>
+    <div class="share-top">
+        <p>交通银行<a href="#">一键复制</a></p>
+        <div class="share-url">https://creditcardapp.bankcomm.com/applynew/front/apply/new/identity.html?trackCode=A0912100240564&channelCode=</div>
+    </div>
+    <div class="share-bottom">
+        <img src="./images/eqcode_demo.png" alt="">
+        <p>扫码>填写信息>急速办卡</p>
+        <button onclick="showShare();">立即分享</button>
+    </div>
+
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        function closeShare() {
+            $('#mask').hide();
+            $('#share').hide();
+        }
+        function showShare() {
+            $('#mask').show();
+            $('#share').show();
+        }
+    </script>
+</body>
+
+</html>

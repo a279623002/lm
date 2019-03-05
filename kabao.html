@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>储蓄卡包</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/user.css">
+</head>
+
+<body>
+    <div id="mask"></div>
+    <div id="kabao">
+        <div class="kabao-row">
+            <p>解绑</p>
+            <p>默认</p>
+        </div>
+        <div class="kabao-row" onclick="closeKabao();">
+            <p>取消</p>
+        </div>
+    </div>
+    <h1><span onclick="javascript:history.go(-1);"></span>储蓄卡包</h1>
+    <div class="kabao-item">
+        <div class="kabao-left">
+            <img src="./images/yinhan_logo.png" alt="">
+        </div>
+        <div class="kabao-center">
+            <p>招商银行 （7527）</p>
+            <p>胡杰</p>
+            <p>6217 **** **** 7282</p>
+        </div>
+        <div class="kabao-right">
+            <a href="javascript:void(0);" onclick="showKabao();">
+                <img src="./images/point.png" alt="">
+            </a>
+            <p>默认</p>
+        </div>
+    </div>
+    <div class="kabao-item">
+        <div class="kabao-left">
+            <img src="./images/yinhan_logo.png" alt="">
+        </div>
+        <div class="kabao-center">
+            <p>招商银行 （7527）</p>
+            <p>胡杰</p>
+            <p>6217 **** **** 7282</p>
+        </div>
+        <div class="kabao-right">
+            <a href="javascript:void(0);" onclick="showKabao();">
+                <img src="./images/point.png" alt="">
+            </a>
+            <p>默认</p>
+        </div>
+    </div>
+    <div class="kabao-add" onclick="window.location.href='./addSavingCard.html'">
+        <img src="./images/add_white.png" alt="">
+        添加储蓄卡
+    </div>
+    <script src="js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        function closeKabao() {
+            $('#mask').hide();
+            $('#kabao').hide();
+        }
+        function showKabao() {
+            $('#mask').show();
+            $('#kabao').show();
+        }
+    </script>
+</body>
+
+</html>

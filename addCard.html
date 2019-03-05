@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加信用卡</title>
+    <link rel="stylesheet" href="./css/huankuan.css">
+</head>
+
+<body style="background:#FFF;">
+    <div id="mask"></div>
+    <div id="help">
+        <img src="./images/help_img01.png" id="helpImg" alt="">
+        <div class="closehelp" onclick="javascript:closehelp();">
+            <img src="./images/guanbi.png" alt="">
+        </div>
+    </div>
+    <div id="codeBox">
+        <h2>请输入手机验证码</h2>
+        <div class="row">
+            <p>重新获取(60s)</p>
+        </div>
+        <div class="row">
+            <input type="text" placeholder="请输入手机验证码">
+            <span>获取验证码</span>
+        </div>
+        <div class="row">
+            <button onclick="closeCode()">取消</button>
+            <button onclick="closeCode()">确定</button>
+        </div>
+        </form>
+    </div>
+    <h1><span onclick="javascript:history.go(-1);"></span>添加信用卡</h1>
+    <form action="">
+        <div class="row">
+            <label for="mobile">信用卡</label>
+            <input type="number" id="mobile" name="mobile" placeholder="请输入信用卡卡号">
+        </div>
+        <div class="row">
+            <label for="order_time">账单日</label>
+            <input type="text" id="order_time" name="order_time" placeholder="请输入账单日">
+        </div>
+        <div class="row">
+            <label for="paytime">还款日</label>
+            <input type="text" id="paytime" name="paytime" placeholder="请输入还款日">
+        </div>
+        <div class="row">
+            <label for="money">账单金额</label>
+            <input type="number" id="money" name="money" placeholder="请输入账单金额（选填）">
+        </div>
+        <div class="row">
+            <label for="limit">信用额度</label>
+            <input type="number" id="limit" name="limit" placeholder="请输入信用卡额度（选填）">
+        </div>
+        <div class="row">
+            <label for="deadline">有效期</label>
+            <input type="text" id="deadline" name="deadline" placeholder="月/年 （如：0621）">
+            <img src="./images/help.png" alt="" onclick="showhelp(1)">
+        </div>
+        <div class="row">
+            <label for="cvn">CVN2</label>
+            <input type="password" id="cvn" name="cvn" placeholder="信用卡背后签名栏后三位数">
+            <img src="./images/help.png" alt="" onclick="showhelp(2)">
+        </div>
+        <div class="row">
+            <label for="mobile">手机号码</label>
+            <input type="number" id="mobile" name="mobile" placeholder="银行预留号码">
+        </div>
+        <div class="submit" onclick="showCode()">提交</div>
+    </form>
+    <script src="js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        function closehelp() {
+            $('#mask').hide();
+            $('#help').hide();
+        }
+        function showhelp(ID) {
+            $('#helpImg').attr('src', './images/help_img0' + ID + '.png');
+            $('#mask').show();
+            $('#help').show();
+        }
+        function showCode() {
+            $('#mask').show();
+            $('#codeBox').show();
+        }
+        function closeCode() {
+            $('#mask').hide();
+            $('#codeBox').hide();
+        }
+    </script>
+</body>
+
+</html>

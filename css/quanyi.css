@@ -1,0 +1,362 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin: 0;
+    position: relative;
+}
+
+header p {
+    font-size: .6rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    text-align: center;
+    overflow: hidden;
+    padding: 0;
+    color: #FFF;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    top: .5rem;
+    z-index: 1;
+    color: #EFE0AD;
+}
+
+header p span.back {
+    width: 1.3rem;
+    height: 1.3rem;
+    background: url(../images/back_white.png) no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    float: left;
+    margin-left: .5rem;
+}
+
+header img {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+header a {
+    display: inline-block;
+    width: 25%;
+    height: 10%;
+    position: absolute;
+    bottom: 17%;
+    left: 38.5%;
+}
+
+main {
+    margin-top: -2rem;
+    position: relative;
+    z-index: 99;
+}
+
+main .main-head {
+    height: 4rem;
+    line-height: 6rem;
+    text-align: left;
+    overflow: hidden;
+    background: url(../images/arrow_right.png) no-repeat right .5rem bottom .4rem;
+    background-size: 1rem;
+    color: #333333;
+    font-size: .8rem;
+}
+
+main .main-head img {
+    height: 4rem;
+    width: 4rem;
+    display: inline-block;
+    float: left;
+    margin: 0 .5rem 0 .5rem;
+}
+
+main .main-head span {
+    display: inline-block;
+    float: right;
+    margin-right: 2rem;
+    color: #666666;
+}
+
+main .main-row {
+    padding: 1rem .5rem 1rem .5rem;
+    border-bottom: 1px solid #EFEFEF;
+    display: flex;
+    justify-content: space-around;
+}
+
+main .main-row .main-col:first-child {
+    width: 20%;
+}
+
+main .main-row .main-col:nth-child(2) {
+    width: 59%;
+}
+
+main .main-row .main-col:last-child {
+    width: 20%;
+}
+
+main .main-row .main-col:first-child img {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+main .main-row .main-col:nth-child(2) p {
+    margin: .2rem 0 .5rem 0;
+    padding: 0;
+    font-size: .6rem;
+    color: #666666;
+    text-align: left;
+    text-indent: .5rem;
+}
+
+main .main-row .main-col:nth-child(2) a {
+    text-decoration: none;
+    font-size: .6rem;
+    color: #4194FE;
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+main .main-row .main-col:last-child span {
+    font-size: .6rem;
+    display: block;
+    width: 3rem;
+    text-align: center;
+    color: #E7AD4B;
+    margin: auto 0 auto auto;
+}
+
+main .main-row .main-col:last-child a {
+    width: 3.5rem;
+    height: 1.5rem;
+    font-size: .6rem;
+    border-radius: .3rem;
+    display: block;
+    text-align: center;
+    line-height: 1.5rem;
+    text-decoration: none;
+    background: #4194FE;
+    color: #FFF;
+    margin: .2rem 0 auto auto;
+}
+
+main .main-row .main-col:last-child a.up_grade {
+    background: #D4D4D4;
+    color: rgb(179, 179, 179);
+}
+
+#mask {
+    display: none;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+}
+
+#pay {
+    display: none;
+    width: 80%;
+    position: absolute;
+    background: #FFF;
+    left: 10%;
+    top: 35%;
+    z-index: 99999;
+    border-radius: .2rem;
+}
+
+#pay h2 {
+    margin: 1rem 1.5rem;
+    padding: 0;
+    color: #333333;
+    font-size: .8rem;
+    text-align: left;
+    font-weight: normal;
+}
+
+#pay .pay-row {
+    height: 2.5rem;
+    background: url(../images/arrow_right.png) no-repeat right 1rem center;
+    background-size: 1rem;
+    padding: 0 1.5rem;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+#pay .pay-row img {
+    width: 1.7rem;
+    height: 1.7rem;
+    display: inline-block;
+    margin-top: .35rem;
+}
+
+#pay .pay-cancel {
+    width: 85%;
+    height: 2rem;
+    line-height: 2rem;
+    border: 1px solid #3699FF;
+    color: #4194FE;
+    font-size: .8rem;
+    text-align: center;
+    border-radius: .3rem;
+    margin: 1rem auto;
+}
+
+/* 权益详情 开始 */
+.head span.back {
+    width: 1.3rem;
+    height: 1.3rem;
+    background: url(../images/back_white.png) no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    margin: .5rem;
+}
+
+.head img {
+    width: 10rem;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.head p {
+    color: #F0E2B2;
+    font-size: .6rem;
+    text-align: center;
+}
+
+.grade03 {
+    width: 20rem;
+    height: 25.5rem;
+    margin: 3rem auto;
+    background: url(../images/grade_bg03.png) no-repeat center center;
+    background-size: contain;
+    position: relative;
+}
+
+.grade03 .grade-head {
+    font-size: .85rem;
+    text-align: center;
+    margin-top: -.7rem;
+    color: #F0E2B2;
+    position: absolute;
+    left: 8rem;
+}
+
+.grade03 h2 {
+    width: 17.5rem;
+    margin: 0 auto;
+    padding: 1.5rem 0 .5rem 0;
+    font-size: .7rem;
+    color: #F0E2B2;
+    text-align: center;
+    line-height: 1.2rem;
+    font-weight: normal;
+}
+
+.grade03 .grade-box {
+    width: 19.3rem;
+    margin: 0 auto;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid rgb(250, 239, 186, .2);
+}
+
+.grade03 .grade-box:nth-child(4) {
+    border: none;
+}
+
+.grade03 .grade-box p {
+    margin: .4rem 0;
+    text-indent: 1rem;
+    font-size: .6rem;
+    color: #F0E2B2;
+    width: 19rem;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.grade-btn {
+    background: url(../images/grade_btn_bg.png) no-repeat center center;
+    background-size: contain;
+    width: 15rem;
+    height: 3rem;
+    font-size: .8rem;
+    text-align: center;
+    line-height: 3rem;
+    position: absolute;
+    bottom: -1.5rem;
+    left: 2.5rem;
+    color: #000000;
+}
+
+.grade-btn-gray {
+    background: url(../images/grade_btn_bg_gray.png) no-repeat center center !important;
+    background-size: contain !important;
+    color: #767676 !important;
+}
+
+
+.grade02 {
+    width: 20rem;
+    height: 10rem;
+    margin: 5rem auto 0 auto;
+    background: url(../images/grade_bg02.png) no-repeat center center;
+    background-size: contain;
+    position: relative;
+}
+
+.grade02 .grade-head {
+    font-size: .85rem;
+    text-align: center;
+    margin-top: -.7rem;
+    color: #F0E2B2;
+    position: absolute;
+    left: 7.5rem;
+}
+
+.grade02 h2 {
+    width: 17.5rem;
+    margin: 0 auto;
+    padding: 2.5rem 0 1rem 0;
+    font-size: .7rem;
+    color: #F0E2B2;
+    text-align: center;
+    line-height: 1.2rem;
+    font-weight: normal;
+}
+
+.grade01 {
+    width: 20rem;
+    height: 6.153rem;
+    margin: 5rem auto;
+    background: url(../images/grade_bg01.png) no-repeat center center;
+    background-size: contain;
+    position: relative;
+}
+
+.grade01 .grade-head {
+    font-size: .85rem;
+    text-align: center;
+    margin-top: -.7rem;
+    color: #F0E2B2;
+    position: absolute;
+    left: 7.5rem;
+}
+
+.grade01 h2 {
+    width: 17.5rem;
+    margin: 0 auto;
+    padding: 1.5rem 0 1rem 0;
+    font-size: .7rem;
+    color: #F0E2B2;
+    text-align: center;
+    line-height: 1.2rem;
+    font-weight: normal;
+}
+/* 权益详情 结束 */

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新增团队</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/fuwushang.css">
+    <style>
+        body {
+            background: #F5F5F5;
+            position: relative;
+        }
+
+        header {
+            padding: .5rem 1.5rem .5rem .5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="newmask"></div>
+    <div class="notice">
+        <h2>免费余额已经使用完，<br />如需添加请联系商务对接人。</h2>
+        <a href="javascript:void(0);" onclick="closeNotice()">好的</a>
+    </div>
+    <div class="notice">
+        <h2>已经提交申请，请等待审核。</h2>
+        <p>如需紧急处理，请联系在线客服</p>
+        <a href="javascript:void(0);" onclick="closeNotice()">好的</a>
+    </div>
+    <header>
+        <p>
+            <span class="back" onclick="javascript:history.go(-1);"></span>
+            新增团队
+        </p>
+    </header>
+    <form action="" id="fwsAdd">
+        <div class="add-row">
+            <label for="name">姓名</label>
+            <input type="text" name="name" placeholder="请输入姓名">
+        </div>
+        <div class="add-row">
+            <label for="mobile">手机号码</label>
+            <input type="number" name="mobile" placeholder="请输入手机号码">
+        </div>
+        <div class="add-row">
+            <label for="scale">分润比例</label>
+            <input type="text" name="scale" value="|   %">
+        </div>
+        <button onclick="showNotice(1);return false;">提交审核</button>
+    </form>
+    <div class="footer-tip">
+        <p>剩余8个免费名额</p>
+        <p>待审核2个名额</p>
+    </div>
+
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        function showNotice(ID) {
+            $('#newmask').show();
+            $('.notice').eq(ID).show();
+        }
+        function closeNotice() {
+            $('#newmask').hide();
+            $('.notice').hide();
+        }
+        // showNotice(0);
+        // showNotice(1);
+    </script>
+</body>
+
+</html>

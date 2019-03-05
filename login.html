@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录页</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+    <div class="top">
+        <div class="top-img"></div>
+        <p>龙猫管家</p>
+    </div>
+    <form action="" id="login">
+        <div class="row">
+            <div class="phone"></div>
+            <input type="number" name="mobile" id="mobile" placeholder="请输入手机号">
+            <span onclick="javascript:clearText('mobile')">&times;</span>
+        </div>
+        <div class="row">
+            <div class="lock"></div>
+            <input type="password" name="password" id="password" placeholder="请输入密码">
+            <span onclick="javascript:clearText('password')">&times;</span>
+        </div>
+        <div class="login">登录</div>
+    </form>
+    <div class="buttom">
+        <a href="./reset.html">忘记密码</a>
+        <a href="./regist.html">快速注册</a>
+    </div>
+    <script src="js/font.js"></script>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script>
+        function clearText(ID) {
+            $('#' + ID).val('');
+        }
+    </script>
+</body>
+
+</html>

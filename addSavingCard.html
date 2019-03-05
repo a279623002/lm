@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加储蓄卡</title>
+    <link rel="stylesheet" href="./css/regist.css">
+    <style>
+        h1 span {
+        width: 1.3rem;
+        height: 1.3rem;
+        background: url(./images/back.png) no-repeat center center;
+        background-size: contain;
+        display: inline-block;
+        float: left;
+        margin-top: .2rem;
+}
+    </style>
+</head>
+
+<body>
+    <h1><span onclick="javascript:history.go(-1);"></span>添加储蓄卡</h1>
+    <form action="">
+        <div class="row">
+            <label for="number">储蓄卡</label>
+            <input type="number" id="number" name="number" placeholder="请输入储蓄卡号">
+        </div>
+        <div class="row">
+            <label for="mobile">手机号</label>
+            <input type="password" id="mobile" name="mobile" placeholder="请输入银行预留手机号">
+        </div>
+        <div class="row">
+            <label for="code">验证码</label>
+            <input type="text" id="code" name="code" placeholder="请输入短信验证码" style="width: 45%;">
+            <div class="code">获取验证码</div>
+        </div>
+        <div class="check">
+            <input id="agree" type="radio" name="agree" value="">
+            <label for="agree"></label>
+            <span>我已阅读并同意《服务协议》</span>
+        </div>
+        <div class="next-btn">确定</div>
+    </form>
+    <script src="js/font.js"></script>
+</body>
+
+</html>

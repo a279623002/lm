@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/user.css">
+</head>
+
+<body>
+    <div id="mask"></div>
+    <div id="renzhen">
+        <p>认证已通过</p>
+        <div class="renzhen-row">
+            <label>用户名称</label>
+            <span>黄米</span>
+        </div>
+        <div class="renzhen-row">
+            <label>身份证号</label>
+            <span>440882****050****</span>
+        </div>
+        <p onclick="closeRenzhen();">知道了</p>
+    </div>
+    <header>
+        <div class="head-left" onclick="javascript:window.location.href='./userDetail.html'">
+            <img class="user" src="./images/user_head.png" alt="">
+            <img class="user-status" src="./images/member_gray.png" alt="">
+        </div>
+        <div class="head-center">
+            <p>139****1684</p>
+            <span>高级会员</span>
+        </div>
+        <div class="head-right">
+            <div class="head-right-top" onclick="javascript:window.location.href='./quanyi.html'">
+                <img src="./images/huiyuan_user.png" alt="">
+                <div class="head-right-top-center">
+                    <dt>升级会员</dt>
+                    <dd>享超值权益</dd>
+                </div>
+            </div>
+            <p>推荐码：000B</p>
+        </div>
+    </header>
+    <nav>
+        <div class="nav-cols" onclick="javascript:window.location.href='./shouyi.html'">
+            <img src="./images/user_shouyi.png" alt="">
+            <p>我的收益</p>
+        </div>
+        <div class="nav-cols" onclick="javascript:window.location.href='./tuijian.html'">
+            <img src="./images/user_tuijian.png" alt="">
+            <p>我的推荐</p>
+        </div>
+        <div class="nav-cols" onclick="javascript:window.location.href='./planHuankuan.html'">
+            <img src="./images/user_huankuan.png" alt="">
+            <p>还款计划</p>
+        </div>
+        <div class="nav-cols" onclick="showRenzhen();">
+            <img src="./images/user_renzheng.png" alt="">
+            <p>实名认证</p>
+        </div>
+    </nav>
+    <div class="active-btn" onclick="javascript:window.location.href='./quanyi.html'">
+        <img src="./images/user_huiyuan_active.png" alt="">
+    </div>
+    <div class="main">
+        <div class="main-cols" onclick="javascript:window.location.href='./msg.html'">
+            <p>消息中心</p>
+            <span>1</span>
+        </div>
+        <div class="main-cols" onclick="javascript:window.location.href='./kabao.html'">
+            <p>储蓄卡包</p>
+        </div>
+        <div class="main-cols" onclick="javascript:window.location.href='./huankuanjin.html'">
+            <p>还款账户</p>
+        </div>
+        <div class="main-cols" onclick="javascript:window.location.href='./help.html'">
+            <p>帮助中心</p>
+        </div>
+        <div class="main-cols" onclick="javascript:window.location.href='./fuwushang.html'">
+            <p>服务商平台</p>
+        </div>
+        <div class="main-cols" onclick="javascript:window.location.href='./setting.html'">
+            <p>设置</p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-cols" onclick="javascript:window.location.href='./index.html'">
+            <img src="./images/index.png" alt="" srcset="">
+            <p>首页</p>
+        </div>
+        <div class="footer-cols" onclick="javascript:window.location.href='./share.html'">
+            <img src="./images/share.png" alt="" srcset="">
+            <p>分享</p>
+        </div>
+        <div class="footer-cols">
+            <img src="./images/user_active.png" alt="" srcset="">
+            <p>我的</p>
+        </div>
+    </footer>
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script>
+        function closeRenzhen() {
+            document.getElementById("mask").style.display = "none";
+            document.getElementById("renzhen").style.display = "none";
+        }
+        function showRenzhen() {
+            document.getElementById("mask").style.display = "block";
+            document.getElementById("renzhen").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
